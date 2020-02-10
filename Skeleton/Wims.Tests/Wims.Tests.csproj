@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Agency\Wims.csproj" />
+    <ProjectReference Include="..\Wims\Wims.csproj" />
   </ItemGroup>
 
 </Project>
