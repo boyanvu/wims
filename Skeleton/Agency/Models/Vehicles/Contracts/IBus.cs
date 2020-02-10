@@ -1,4 +1,4 @@
-﻿namespace Agency.Models.Vehicles.Contracts
+﻿namespace Wims.Models.Vehicles.Contracts
 {
     public interface IBus
     {

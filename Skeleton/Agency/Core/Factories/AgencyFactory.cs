@@ -1,9 +1,9 @@
 ﻿using System;
-using Agency.Core.Contracts;
-using Agency.Models.Contracts;
-using Agency.Models.Vehicles.Contracts;
+using Wims.Core.Contracts;
+using Wims.Models.Contracts;
+using Wims.Models.Vehicles.Contracts;
 
-namespace Agency.Core.Factories
+namespace Wims.Core.Factories
 {
     public class AgencyFactory : IAgencyFactory
     {

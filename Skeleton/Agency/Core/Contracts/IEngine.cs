@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using Agency.Models.Contracts;
-using Agency.Models.Vehicles.Contracts;
+using Wims.Models.Contracts;
+using Wims.Models.Vehicles.Contracts;
 
-namespace Agency.Core.Contracts
+namespace Wims.Core.Contracts
 {
     public interface IEngine
     {

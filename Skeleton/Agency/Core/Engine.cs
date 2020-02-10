@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Agency.Core.Contracts;
-using Agency.Core.Providers;
-using Agency.Models.Contracts;
-using Agency.Models.Vehicles.Contracts;
+using Wims.Core.Contracts;
+using Wims.Core.Providers;
+using Wims.Models.Contracts;
+using Wims.Models.Vehicles.Contracts;
 
-namespace Agency.Core
+namespace Wims.Core
 {
     public class Engine : IEngine
     {

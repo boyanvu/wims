@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26124.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Agency", "Agency\Agency.csproj", "{A4F7AB6C-5A55-40EF-AC2C-0D97872B38DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wims", "Agency\Wims.csproj", "{A4F7AB6C-5A55-40EF-AC2C-0D97872B38DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Agency.Tests", "Agency.Tests\Agency.Tests.csproj", "{D5F261F4-AC07-4AC1-BF01-1C727A9B0EA3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wims.Tests", "Agency.Tests\Wims.Tests.csproj", "{D5F261F4-AC07-4AC1-BF01-1C727A9B0EA3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +15,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{A4F7AB6C-5A55-40EF-AC2C-0D97872B38DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -44,5 +41,11 @@ Global
 		{D5F261F4-AC07-4AC1-BF01-1C727A9B0EA3}.Release|x64.Build.0 = Release|Any CPU
 		{D5F261F4-AC07-4AC1-BF01-1C727A9B0EA3}.Release|x86.ActiveCfg = Release|Any CPU
 		{D5F261F4-AC07-4AC1-BF01-1C727A9B0EA3}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {99610F93-CAB6-4DF1-AE77-5A36537D9F2B}
 	EndGlobalSection
 EndGlobal

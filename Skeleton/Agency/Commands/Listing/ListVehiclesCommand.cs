@@ -1,4 +1,4 @@
-﻿namespace Agency.Commands.Creating
+﻿namespace Wims.Commands.Creating
 {
     // TODO
     class ListVehiclesCommand

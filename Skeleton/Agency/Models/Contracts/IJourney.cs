@@ -1,6 +1,6 @@
-﻿using Agency.Models.Vehicles.Contracts;
+﻿using Wims.Models.Vehicles.Contracts;
 
-namespace Agency.Models.Contracts
+namespace Wims.Models.Contracts
 {
     public interface IJourney
     {

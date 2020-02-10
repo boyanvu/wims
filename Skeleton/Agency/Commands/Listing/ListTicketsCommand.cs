@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Agency.Commands.Contracts;
-using Agency.Core.Contracts;
+using Wims.Commands.Contracts;
+using Wims.Core.Contracts;
 
-namespace Agency.Commands.Creating
+namespace Wims.Commands.Creating
 {
     public class ListTicketsCommand : ICommand
     {

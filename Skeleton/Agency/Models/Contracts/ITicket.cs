@@ -1,4 +1,4 @@
-﻿namespace Agency.Models.Contracts
+﻿namespace Wims.Models.Contracts
 {
     public interface ITicket
     {

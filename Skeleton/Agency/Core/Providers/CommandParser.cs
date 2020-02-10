@@ -1,12 +1,12 @@
-﻿using Agency.Commands.Contracts;
-using Agency.Core.Contracts;
-using Agency.Core.Factories;
+﻿using Wims.Commands.Contracts;
+using Wims.Core.Contracts;
+using Wims.Core.Factories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
-namespace Agency.Core.Providers
+namespace Wims.Core.Providers
 {
     public class CommandParser : IParser
     {

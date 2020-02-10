@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Agency.Commands.Contracts
+namespace Wims.Commands.Contracts
 {
     public interface ICommand
     {

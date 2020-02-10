@@ -1,10 +1,10 @@
-﻿using Agency.Core;
+﻿using Wims.Core;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.IO;
 using System.Reflection;
 
-namespace Agency.Tests
+namespace Wims.Tests
 {
     [TestClass]
     public class IOTests

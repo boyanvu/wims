@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Agency.Models.Contracts
+namespace Wims.Models.Contracts
 {
     interface ITeam
     {

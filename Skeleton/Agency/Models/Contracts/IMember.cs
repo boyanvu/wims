@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Agency.Models.Common;
+using Wims.Models.Common;
 
-namespace Agency.Models.Contracts
+namespace Wims.Models.Contracts
 {
     public interface IMember
     {

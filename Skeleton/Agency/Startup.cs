@@ -1,6 +1,6 @@
-﻿using Agency.Core;
+﻿using Wims.Core;
 
-namespace Agency
+namespace Wims
 {
     public class Startup
     {

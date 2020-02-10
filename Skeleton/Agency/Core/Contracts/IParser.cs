@@ -1,7 +1,7 @@
-﻿using Agency.Commands.Contracts;
+﻿using Wims.Commands.Contracts;
 using System.Collections.Generic;
 
-namespace Agency.Core.Contracts
+namespace Wims.Core.Contracts
 {
     public interface IParser
     {

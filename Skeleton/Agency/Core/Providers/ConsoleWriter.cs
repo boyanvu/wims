@@ -1,7 +1,7 @@
-﻿using Agency.Core.Contracts;
+﻿using Wims.Core.Contracts;
 using System;
 
-namespace Agency.Core.Providers
+namespace Wims.Core.Providers
 {
     public class ConsoleWriter : IWriter
     {
