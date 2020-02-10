@@ -47,6 +47,7 @@ namespace Wims.Core
 
         public IParser Parser { get; set; }
 
+        // TODO Modify
         public IList<IVehicle> Vehicles { get; private set; }
         
         public IList<IJourney> Journeys { get; private set; }
