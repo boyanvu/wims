@@ -22,6 +22,8 @@ namespace Wims.Core
             this.Writer = new ConsoleWriter();
             this.Parser = new CommandParser();
 
+            this.Teams = new List<ITeam>();
+
             this.Vehicles = new List<IVehicle>();
             this.Journeys = new List<IJourney>();
             this.Tickets = new List<ITicket>();
@@ -48,6 +50,8 @@ namespace Wims.Core
         public IParser Parser { get; set; }
 
         // TODO Modify
+        public IList<ITeam> Teams { get; private set; }
+
         public IList<IVehicle> Vehicles { get; private set; }
         
         public IList<IJourney> Journeys { get; private set; }
