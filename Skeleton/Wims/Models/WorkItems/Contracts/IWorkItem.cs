@@ -6,6 +6,7 @@ namespace Wims.Models.Contracts
 {
     public interface IWorkItem
     {
+        int Id { get; set; }
         string Title { get; }
         string Description { get; }
         IList<string> Comments { get; }
