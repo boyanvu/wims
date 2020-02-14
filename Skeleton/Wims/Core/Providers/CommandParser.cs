@@ -24,9 +24,9 @@ namespace Wims.Core.Providers
 
             return commandName switch
             {
-                "createboxer" => new CreateBoxerCommand(parameters, olympicCommittee),
-                "createsprinter" => new CreateSprinterCommand(parameters, olympicCommittee),
-                "listolympians" => new ListOlympiansCommand(parameters, olympicCommittee),
+                //"createboxer" => new CreateBoxerCommand(parameters, olympicCommittee),
+               // "createsprinter" => new CreateSprinterCommand(parameters, olympicCommittee),
+                //"listolympians" => new ListOlympiansCommand(parameters, olympicCommittee),
 
                 _ => throw new InvalidOperationException("Command does not exist")
             };

@@ -1,6 +1,6 @@
 ﻿using System;
-
-
+using Wims.Core.Contracts;
+using Wims.Core.Providers;
 
 namespace OlympicGames.Core
 {
