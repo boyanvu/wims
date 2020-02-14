@@ -8,47 +8,28 @@ using System.Reflection;
 
 namespace Wims.Core.Providers
 {
-    public class CommandParser : IParser
+    public class CommandParser : ICommandParser
     {
-        // Magic, do not touch!
-        public ICommand ParseCommand(string fullCommand)
+        // Every command gets the same instance of OlympicCommittee
+        ///private static readonly IOlympicCommittee olympicCommittee = new OlympicCommittee();
+
+        public ICommand ParseCommand(string commandLine)
         {
-            var commandName = fullCommand.Split(' ')[0];
-            var commandTypeInfo = this.FindCommand(commandName);
-            var command = Activator.CreateInstance(commandTypeInfo, WimsFactory.Instance, Engine.Instance) as ICommand;
+            var lineParameters = commandLine
+                .Trim()
+                .Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
-            return command;
-        }
+            var commandName = lineParameters[0];
+            var parameters = lineParameters.Skip(1).ToList();
 
-        // Magic, do not touch!
-        public IList<string> ParseParameters(string fullCommand)
-        {
-            var commandParts = fullCommand.Split(' ').ToList();
-            commandParts.RemoveAt(0);
-
-            if (commandParts.Count() == 0)
+            return commandName switch
             {
-                return new List<string>();
-            }
+                "createboxer" => new CreateBoxerCommand(parameters, olympicCommittee),
+                "createsprinter" => new CreateSprinterCommand(parameters, olympicCommittee),
+                "listolympians" => new ListOlympiansCommand(parameters, olympicCommittee),
 
-            return commandParts;
-        }
-
-        // Very magic, do not even think about touching!!!
-        private TypeInfo FindCommand(string commandName)
-        {
-            Assembly currentAssembly = this.GetType().GetTypeInfo().Assembly;
-            var commandTypeInfo = currentAssembly.DefinedTypes
-                .Where(type => type.ImplementedInterfaces.Any(inter => inter == typeof(ICommand)))
-                .Where(type => type.Name.ToLower() == (commandName.ToLower() + "command"))
-                .SingleOrDefault();
-
-            if (commandTypeInfo == null)
-            {
-                throw new ArgumentException("The passed command is not found!");
-            }
-
-            return commandTypeInfo;
+                _ => throw new InvalidOperationException("Command does not exist")
+            };
         }
     }
 }

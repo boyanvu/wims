@@ -1,101 +1,66 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Wims.Core.Contracts;
-using Wims.Core.Providers;
-using Wims.Models.Contracts;
 
 
-namespace Wims.Core
+
+namespace OlympicGames.Core
 {
     public class Engine : IEngine
     {
-        private static IEngine instanceHolder;
+        private const string Delimiter = "####################";
+        private readonly ICommandParser parser;
 
-        private const string TerminationCommand = "Exit";
-        private const string NullProvidersExceptionMessage = "cannot be null.";
+        static Engine()
+        {
+            Instance = new Engine();
+        }
 
-        // private because of Singleton design pattern
         private Engine()
         {
-            this.Reader = new ConsoleReader();
-            this.Writer = new ConsoleWriter();
-            this.Parser = new CommandParser();
-
-            this.Teams = new List<ITeam>();
-            this.Members = new List<IMember>();
-            this.Boards = new List<IBoard>();
-            this.Workitems = new List<IWorkItem>();
-
-
-
+            this.parser = new CommandParser();
         }
 
-        public static IEngine Instance
-        {
-            get
-            {
-                if (instanceHolder == null)
-                {
-                    instanceHolder = new Engine();
-                }
-
-                return instanceHolder;
-            }
-        }
-
-        // Property dependencty injection not validated for simplicity
-        public IReader Reader { get; set; }
-
-        public IWriter Writer { get; set; }
-
-        public IParser Parser { get; set; }
-
-        // TODO Modify
-        public IList<ITeam> Teams { get; private set; }
-
-        public IList<IMember> Members { get; private set; }
-
-        public IList<IBoard> Boards { get; private set; }
-
-        public IList<IWorkItem> Workitems { get; private set; }
-
-        public void Start()
+        public void Run()
         {
             while (true)
             {
-                try
-                {
-                    var commandAsString = this.Reader.ReadLine();
-
-                    if (commandAsString.ToLower() == TerminationCommand.ToLower())
-                    {
-                        break;
-                    }
-
-                    this.ProcessCommand(commandAsString);
-                }
-                catch (Exception ex)
-                {
-                    this.Writer.WriteLine(ex.Message);
-                    this.Writer.WriteLine("####################");
-                }
+                // Read -> Process -> Print -> Repeat
+                string input = this.Read();
+                string result = this.Process(input);
+                this.Print(result);
             }
         }
 
-        private void ProcessCommand(string commandAsString)
+        public static IEngine Instance { get; }
+
+        private string Read()
         {
-            if (string.IsNullOrWhiteSpace(commandAsString))
+            return Console.ReadLine();
+        }
+
+        private string Process(string commandLine)
+        {
+            if (commandLine == "end")
+                Environment.Exit(0);
+
+            try
             {
-                throw new ArgumentNullException("Command cannot be null or empty.");
+                var command = this.parser.ParseCommand(commandLine);
+                return $"{command.Execute()}{Environment.NewLine}{Delimiter}";
             }
+            catch (Exception e)
+            {
+                while (e.InnerException != null)
+                {
+                    e = e.InnerException;
+                }
 
-            var command = this.Parser.ParseCommand(commandAsString);
-            var parameters = this.Parser.ParseParameters(commandAsString);
+                return $"ERROR: {e.Message}";
+            }
+        }
 
-            var executionResult = command.Execute(parameters);
-            this.Writer.WriteLine(executionResult);
-            this.Writer.WriteLine("####################");
+        private void Print(string msg)
+        {
+            Console.WriteLine(msg);
         }
     }
 }
