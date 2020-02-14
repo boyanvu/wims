@@ -9,21 +9,7 @@ namespace Wims.Core.Factories
 {
     public class WimsFactory : IWimsFactory
     {
-        private static IWimsFactory instancedHolder = new WimsFactory();
-
-        private WimsFactory()
-        {
-        }
-
-        public static IWimsFactory Instance
-        {
-            get
-            {
-                return instancedHolder;
-            }
-        }
-
-
+      
         public IBoard CreateBoard(string name)
         {
             return new Board(name);

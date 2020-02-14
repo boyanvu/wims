@@ -1,17 +1,18 @@
-﻿using Wims.Commands.Contracts;
+﻿
 using Wims.Core.Contracts;
 using Wims.Core.Factories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using Wims.Core.Abstracts;
 
 namespace Wims.Core.Providers
 {
     public class CommandParser : ICommandParser
     {
         // Every command gets the same instance of OlympicCommittee
-        ///private static readonly IOlympicCommittee olympicCommittee = new OlympicCommittee();
+        private static readonly ITeamProvider teamProvider = new TeamProvider();
 
         public ICommand ParseCommand(string commandLine)
         {
@@ -24,7 +25,7 @@ namespace Wims.Core.Providers
 
             return commandName switch
             {
-                //"createboxer" => new CreateBoxerCommand(parameters, olympicCommittee),
+                "createteam" => new CreateTeamCommand(parameters, teamProvider),
                // "createsprinter" => new CreateSprinterCommand(parameters, olympicCommittee),
                 //"listolympians" => new ListOlympiansCommand(parameters, olympicCommittee),
 

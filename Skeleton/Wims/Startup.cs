@@ -1,16 +1,10 @@
-﻿using Wims.Core;
+﻿using OlympicGames.Core;
+using Wims.Core;
 
 namespace Wims
 {
     public class Startup
     {
-        public static void Main(string[] args)
-        {
-            // Singleton design pattern
-            // Ensures that there is only one instance of Engine in existance
-            // Yo are already familiar with it, right?
-            var engine = Engine.Instance;
-            engine.Start();
-        }
+        public static void Main() => Engine.Instance.Run();
     }
 }
