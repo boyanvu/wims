@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using Wims.Models.Contracts;
-using Wims.Models.Vehicles.Contracts;
+
 
 namespace Wims.Core.Contracts
 {
@@ -15,10 +15,13 @@ namespace Wims.Core.Contracts
         IParser Parser { get; set; }
 
         // TODO Modify
-        IList<IVehicle> Vehicles { get; }
+        IList<ITeam> Teams { get; }
 
-        IList<IJourney> Journeys { get; }
+        IList<IMember> Members { get; }
 
-        IList<ITicket> Tickets { get; }
+        IList<IBoard> Boards { get; }
+
+        IList<IWorkItem> Workitems { get; }
+
     }
 }

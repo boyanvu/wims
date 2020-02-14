@@ -10,5 +10,7 @@ namespace Wims.Models.Contracts
         IList<IMember> Members { get; }
         IList<IBoard> Boards { get; }
 
+        string Print();
+
     }
 }

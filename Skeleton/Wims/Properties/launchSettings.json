@@ -1,7 +1,7 @@
 {
   "profiles": {
     "Wims": {
-      "commandName": "Executable"
+      "commandName": "Project"
     }
   }
 }

@@ -4,7 +4,7 @@ using System.Text;
 using Wims.Core.Contracts;
 using Wims.Core.Providers;
 using Wims.Models.Contracts;
-using Wims.Models.Vehicles.Contracts;
+
 
 namespace Wims.Core
 {
@@ -23,10 +23,12 @@ namespace Wims.Core
             this.Parser = new CommandParser();
 
             this.Teams = new List<ITeam>();
+            this.Members = new List<IMember>();
+            this.Boards = new List<IBoard>();
+            this.Workitems = new List<IWorkItem>();
 
-            this.Vehicles = new List<IVehicle>();
-            this.Journeys = new List<IJourney>();
-            this.Tickets = new List<ITicket>();
+
+
         }
 
         public static IEngine Instance
@@ -52,11 +54,11 @@ namespace Wims.Core
         // TODO Modify
         public IList<ITeam> Teams { get; private set; }
 
-        public IList<IVehicle> Vehicles { get; private set; }
-        
-        public IList<IJourney> Journeys { get; private set; }
+        public IList<IMember> Members { get; private set; }
 
-        public IList<ITicket> Tickets { get; private set; }
+        public IList<IBoard> Boards { get; private set; }
+
+        public IList<IWorkItem> Workitems { get; private set; }
 
         public void Start()
         {
