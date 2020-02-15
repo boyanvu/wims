@@ -29,6 +29,7 @@ namespace Wims.Core.Providers
             {
                 "createteam" => new CreateTeamCommand(parameters, teamProvider),
                 "createboard" => new CreateBoardCommand(parameters, boardProvider),
+                "selectteam" => new SelectTeamCommand(parameters, teamProvider),
                 //"listolympians" => new ListOlympiansCommand(parameters, olympicCommittee),
 
                 _ => throw new InvalidOperationException("Command does not exist")
