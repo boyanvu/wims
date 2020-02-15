@@ -5,7 +5,7 @@ using Wims.Models.Contracts;
 
 namespace Wims.Core.Contracts
 {
-    interface IBoardProvider
+    public interface IBoardProvider
     {
         IReadOnlyList<IBoard> Boards { get; }
 

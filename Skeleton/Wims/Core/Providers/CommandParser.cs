@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using Wims.Core.Abstracts;
+using Wims.Core.Commands;
 
 namespace Wims.Core.Providers
 {
@@ -13,6 +14,7 @@ namespace Wims.Core.Providers
     {
         // Every command gets the same instance of OlympicCommittee
         private static readonly ITeamProvider teamProvider = new TeamProvider();
+        private static readonly IBoardProvider boardProvider = new BoardProvider();
 
         public ICommand ParseCommand(string commandLine)
         {
@@ -26,7 +28,7 @@ namespace Wims.Core.Providers
             return commandName switch
             {
                 "createteam" => new CreateTeamCommand(parameters, teamProvider),
-               // "createsprinter" => new CreateSprinterCommand(parameters, olympicCommittee),
+                "createboard" => new CreateBoardCommand(parameters, boardProvider),
                 //"listolympians" => new ListOlympiansCommand(parameters, olympicCommittee),
 
                 _ => throw new InvalidOperationException("Command does not exist")
