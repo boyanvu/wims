@@ -11,7 +11,15 @@ namespace Wims.Core.Abstracts
         public CreateTeamCommand(IList<string> commandLine, ITeamProvider teamProvider)
             : base(commandLine)
         {
+            this.CheckIfCurrentTeamIsSet();
             this.TeamProvider = teamProvider;
+        }
+
+        private void CheckIfCurrentTeamIsSet()
+        {
+            var currTeam = CurrentVariables.currentTeam;
+            if (currTeam != null)
+                throw new ArgumentException($"You are currently in team {currTeam.Name}.{Environment.NewLine} Please use command exitteam before if you want to create new team.");
         }
         public ITeamProvider TeamProvider { get; }
         public override string Execute()
