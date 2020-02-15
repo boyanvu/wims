@@ -34,6 +34,7 @@ namespace Wims.Core.Commands
             }
 
             var boardName = this.CommandParameters[0];
+
             foreach (var boardInTeam in currTeam.Boards)
             {
                 if (boardInTeam.Name == boardName)
@@ -50,6 +51,8 @@ namespace Wims.Core.Commands
 
             this.BoardProvider.Add(board);
             currTeam.Boards.Add(board);
+
+            CurrentVariables.currentBoard = board;
 
             return $"Created Board {Environment.NewLine}{board.Print()}";
         }
