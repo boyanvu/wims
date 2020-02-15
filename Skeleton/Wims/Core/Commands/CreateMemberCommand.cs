@@ -24,8 +24,8 @@ namespace Wims.Core.Commands
             }
 
             var allMembers = MemberProvider.Members;
-            var currentTeam = CurrentVariables.currentTeam;
-            var member = this.Factory.CreateMember(
+            var currentTeam = CurrentVariables.currentTeam; //TODO check if currentteam is not null
+            var member = this.Factory.CreateMember( //Create member after checks
                 this.CommandParameters[0]);
 
             if (allMembers.Count == 0)
@@ -37,7 +37,7 @@ namespace Wims.Core.Commands
             {
                 foreach (var cMember in allMembers)
                 {
-                    if (cMember.Name == member.Name)
+                    if (cMember.Name == member.Name) //Checks the first cMember only
                     {
                         throw new ArgumentException("Member already exists!");
                     }
