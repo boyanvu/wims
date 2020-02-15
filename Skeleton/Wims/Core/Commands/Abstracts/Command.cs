@@ -6,16 +6,13 @@ namespace Wims.Core.Commands.Abstracts
 {
     public abstract class Command : ICommand
     {
-        protected Command(IList<string> commandLine, ITeamProvider teamProvider)
+        protected Command(IList<string> commandLine)
         {
-            this.TeamProvider = teamProvider;
             this.Factory = new WimsFactory();
             this.CommandParameters = new List<string>(commandLine);
         }
 
         protected IList<string> CommandParameters { get; }
-
-        protected ITeamProvider TeamProvider { get; }
 
         protected IWimsFactory Factory { get; }
 

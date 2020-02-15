@@ -8,11 +8,12 @@ namespace Wims.Core.Abstracts
 {
     public class CreateTeamCommand : Command
     {
-        public CreateTeamCommand(IList<string> commandLine, ITeamProvider committee)
-            : base(commandLine, committee)
+        public CreateTeamCommand(IList<string> commandLine, ITeamProvider teamProvider)
+            : base(commandLine)
         {
+            this.TeamProvider = teamProvider;
         }
-
+        public ITeamProvider TeamProvider { get; }
         public override string Execute()
         {
             if (this.CommandParameters.Count != 1)
