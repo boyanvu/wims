@@ -6,23 +6,26 @@ using Wims.Core.Contracts;
 
 namespace Wims.Core.Commands
 {
-    public class ListTeamsCommand : Command
+    public class ListAllTeamMembersCommand : Command
     {
-        public ListTeamsCommand(IList<string> commandLine, ITeamProvider teamProvider) :
+        public ListAllTeamMembersCommand(IList<string> commandLine, ITeamProvider teamProvider) :
             base(commandLine)
         {
             this.TeamProvider = teamProvider;
         }
 
-        ITeamProvider TeamProvider { get; }
+        public ITeamProvider TeamProvider { get; }
+
+
         public override string Execute()
         {
-            var builder = new StringBuilder();
-            var teams = this.TeamProvider.Teams;
 
-            foreach (var team in teams)
+            var builder = new StringBuilder();
+            var members = CurrentVariables.currentTeam.Members;
+
+            foreach (var member in members)
             {
-                builder.AppendLine(team.Print());
+                builder.AppendLine(member.Print());
             }
 
             return builder.ToString().TrimEnd();

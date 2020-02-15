@@ -5,7 +5,7 @@ using Wims.Models.Contracts;
 
 namespace Wims.Core.Contracts
 {
-    interface IMemberProvider
+    public interface IMemberProvider
     {
         IReadOnlyList<IMember> Members { get; }
 
