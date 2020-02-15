@@ -31,7 +31,10 @@ namespace Wims.Core.Providers
                 "selectteam" => new SelectTeamCommand(parameters, teamProvider),
                 "listteams" => new ListTeamsCommand(parameters, teamProvider),
                 "listallmembers" => new ListAllMembersCommand(parameters, memberProvider),
-                "listteammembers" => new ListAllTeamMembersCommand(parameters, teamProvider),
+                "listallteammembers" => new ListAllTeamMembersCommand(parameters, teamProvider),
+                "listallboards" => new ListAllBoardsCommand(parameters, boardProvider),
+                "listallteamboards" => new ListAllTeamBoardsCommand(parameters, boardProvider),
+
 
                 _ => throw new InvalidOperationException("Command does not exist")
             };

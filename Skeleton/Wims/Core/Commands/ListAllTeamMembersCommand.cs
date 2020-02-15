@@ -23,10 +23,20 @@ namespace Wims.Core.Commands
             var builder = new StringBuilder();
             var members = CurrentVariables.currentTeam.Members;
 
-            foreach (var member in members)
+            if (members.Count == 0)
             {
-                builder.AppendLine(member.Print());
+                throw new ArgumentException("No members in this team!" + Environment.NewLine +
+                          $"To add a new member in the team, use the following command:" + Environment.NewLine +
+                          $"createmember <membername>");
             }
+            else
+            {
+                foreach (var member in members)
+                {
+                    builder.AppendLine(member.Print());
+                }
+            }
+           
 
             return builder.ToString().TrimEnd();
         }

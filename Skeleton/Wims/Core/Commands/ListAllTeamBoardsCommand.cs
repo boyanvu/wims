@@ -23,10 +23,21 @@ namespace Wims.Core.Commands
             var builder = new StringBuilder();
             var boards = CurrentVariables.currentTeam.Members;
 
-            foreach (var board in boards)
+
+            if (boards.Count == 0)
             {
-                builder.AppendLine(board.Print());
+                throw new ArgumentException("No boards in this team!" + Environment.NewLine +
+                          $"To add a new board in the team, use the following command:" + Environment.NewLine +
+                          $"createboard <boardname>");
             }
+            else
+            {
+                foreach (var board in boards)
+                {
+                    builder.AppendLine(board.Print());
+                }
+            }
+            
 
             return builder.ToString().TrimEnd();
         }
