@@ -11,16 +11,9 @@ namespace Wims.Core.Abstracts
         public CreateTeamCommand(IList<string> commandLine, ITeamProvider teamProvider)
             : base(commandLine)
         {
-            this.CheckIfCurrentTeamIsSet();
             this.TeamProvider = teamProvider;
         }
 
-        private void CheckIfCurrentTeamIsSet()
-        {
-            var currTeam = CurrentVariables.currentTeam;
-            if (currTeam != null)
-                throw new ArgumentException($"You are currently in team {currTeam.Name}.{Environment.NewLine} Please use command exitteam before if you want to create new team.");
-        }
         public ITeamProvider TeamProvider { get; }
         public override string Execute()
         {
@@ -29,11 +22,22 @@ namespace Wims.Core.Abstracts
                 throw new ArgumentException("Parameters count is not valid!");
             }
 
+            var teamName = this.CommandParameters[0];
+            foreach (var teamToCheck in this.TeamProvider.Teams)
+            {
+                if (teamToCheck.Name == teamName)
+                {
+                    throw new ArgumentException($"Team {teamName} already exists." + Environment.NewLine + "You could see all teams with command listteams.");
+                }
+            }
+
             var team = this.Factory.CreateTeam(
-                this.CommandParameters[0]
+                teamName
             );
 
             this.TeamProvider.Add(team);
+
+            CurrentVariables.currentTeam = team;
 
             return $"Created Team{Environment.NewLine}{team.Print()}";
         }
