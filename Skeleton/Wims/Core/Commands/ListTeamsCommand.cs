@@ -20,11 +20,20 @@ namespace Wims.Core.Commands
             var builder = new StringBuilder();
             var teams = this.TeamProvider.Teams;
 
-            foreach (var team in teams)
+            if(teams.Count == 0)
             {
-                builder.AppendLine(team.Print());
+                throw new ArgumentException("No teams registered!" + Environment.NewLine +
+                          $"To register a new team use the following command:" + Environment.NewLine +
+                          $"createteam <teamname>");
             }
-
+            else
+            {
+                foreach (var team in teams)
+                {
+                    builder.AppendLine(team.Print());
+                }
+            }
+           
             return builder.ToString().TrimEnd();
         }
     }
