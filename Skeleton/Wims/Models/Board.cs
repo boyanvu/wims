@@ -41,5 +41,11 @@ namespace Wims.Models
 
         public IList<string> History { get; }
 
+
+        public string Print()
+        {
+            return $"{this.GetType().Name} {Environment.NewLine}{this.Name}";
+        }
+
     }
 }

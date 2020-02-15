@@ -27,7 +27,7 @@ namespace Wims.Core.Abstracts
 
             this.TeamProvider.Add(team);
 
-            return $"Created Team{Environment.NewLine}{team}";
+            return $"Created Team{Environment.NewLine}{team.Print()}";
         }
     }
 }

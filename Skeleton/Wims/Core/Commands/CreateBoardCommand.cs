@@ -28,7 +28,7 @@ namespace Wims.Core.Commands
 
             this.BoardProvider.Add(board);
 
-            return $"Created Board {Environment.NewLine}{board}";
+            return $"Created Board {Environment.NewLine}{board.Print()}";
         }
     }
 }
