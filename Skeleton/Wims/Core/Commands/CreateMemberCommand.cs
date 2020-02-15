@@ -24,31 +24,30 @@ namespace Wims.Core.Commands
             }
 
             var allMembers = MemberProvider.Members;
-            var currentTeam = CurrentVariables.currentTeam; //TODO check if currentteam is not null
-            var member = this.Factory.CreateMember( //Create member after checks
-                this.CommandParameters[0]);
-
-            if (allMembers.Count == 0)
+            var currentTeam = CurrentVariables.currentTeam;
+            if (currentTeam == null)
             {
-                this.MemberProvider.Add(member);
-                currentTeam.Members.Add(member);
+                throw new Exception($"You have to select/create team before member creation." + Environment.NewLine +
+                          $"You can you use one of these commands:" + Environment.NewLine +
+                          $"createteam <teamname>, selectteam <teamname>, listteams");
             }
-            else
+
+            var memberName = this.CommandParameters[0];
+
+
+            foreach (var cMember in allMembers)
             {
-                foreach (var cMember in allMembers)
+                if (cMember.Name == memberName)
                 {
-                    if (cMember.Name == member.Name) //Checks the first cMember only
-                    {
-                        throw new ArgumentException("Member already exists!");
-                    }
-                    else
-                    {
-                        this.MemberProvider.Add(member);
-                        currentTeam.Members.Add(member);
-                    }
+                    throw new ArgumentException("Member already exists!");
                 }
             }
 
+            var member = this.Factory.CreateMember(
+            this.CommandParameters[0]);
+
+            this.MemberProvider.Add(member);
+            currentTeam.Members.Add(member);
 
             return $"{member.Name} added to {currentTeam.Name}!";
         }
