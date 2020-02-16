@@ -29,6 +29,7 @@ namespace Wims.Core.Providers
                 "createboard" => new CreateBoardCommand(parameters, boardProvider),
                 "createmember" => new CreateMemberCommand(parameters, memberProvider),
                 "selectteam" => new SelectTeamCommand(parameters, teamProvider),
+                "selectboard" => new SelectBoardCommand(parameters, boardProvider),
                 "listteams" => new ListTeamsCommand(parameters, teamProvider),
                 "listallmembers" => new ListAllMembersCommand(parameters, memberProvider),
                 "listallteammembers" => new ListAllTeamMembersCommand(parameters, teamProvider),
