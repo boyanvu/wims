@@ -10,7 +10,7 @@ namespace Wims.Models
         private static int id = 1;
         private string title;
         private string description;
-       
+
         public WorkItem(string title, string description)
         {
             this.Id = id++;
@@ -25,9 +25,9 @@ namespace Wims.Models
             get;
 
             set;
-           
+
         }
-            
+
         public string Title
         {
             get
@@ -38,11 +38,11 @@ namespace Wims.Models
             {
                 if (value.Length < 10 || value.Length > 50)
                 {
-                    throw new ArgumentOutOfRangeException("Board name must be between 5 and 10 characters long!");
+                    throw new ArgumentException("Work item title must be between 10 and 50 characters long!");
                 }
                 else if (value == null)
                 {
-                    throw new ArgumentNullException("Work item title must not be null!");
+                    throw new ArgumentException("Work item title must not be null!");
                 }
                 this.title = value;
             }
@@ -58,19 +58,23 @@ namespace Wims.Models
             {
                 if (value.Length < 10 || value.Length > 500)
                 {
-                    throw new ArgumentOutOfRangeException("Board name must be between 5 and 10 characters long!");
+                    throw new ArgumentException("Work item description must be between 10 and 500 characters long!");
                 }
                 else if (value == null)
                 {
-                    throw new ArgumentNullException("Work item description must not be null!");
+                    throw new ArgumentException("Work item description must not be null!");
                 }
                 this.description = value;
             }
         }
 
         public IList<string> Comments { get; }
-       
+
         public IList<string> History { get; }
-        
+
+        public string Print()
+        {
+            return $"{this.Title} {this.Description}";
+        }
     }
 }
