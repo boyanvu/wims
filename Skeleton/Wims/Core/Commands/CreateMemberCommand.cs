@@ -33,15 +33,7 @@ namespace Wims.Core.Commands
             }
 
             var memberName = this.CommandParameters[0];
-
-
-            /*foreach (var cMember in allMembers)
-            {
-                if (cMember.Name == memberName)
-                {
-                    throw new ArgumentException("Member already exists!");
-                }
-            }*/
+         
 
             var findMember = this.MemberProvider.Find(memberName);
 
