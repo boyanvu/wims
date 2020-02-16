@@ -11,5 +11,7 @@ namespace Wims.Core.Contracts
 
         void Add(IMember member);
 
+        IMember Find(string name);
+
     }
 }

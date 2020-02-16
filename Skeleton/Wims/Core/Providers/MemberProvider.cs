@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 namespace Wims.Core.Providers
 {
@@ -9,7 +10,6 @@ namespace Wims.Core.Providers
     using System;
     using System.Collections.Generic;
     using System.Text;
-
 
     namespace Wims.Core.Providers
     {
@@ -28,6 +28,12 @@ namespace Wims.Core.Providers
             public void Add(IMember member)
             {
                 members.Add(member);
+            }
+
+            public IMember Find(string name)
+            {
+                var member = members.FirstOrDefault(m => m.Name == name);
+                return member;
             }
         }
     }
