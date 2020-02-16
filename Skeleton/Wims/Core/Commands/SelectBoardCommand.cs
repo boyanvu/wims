@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,15 +9,22 @@ namespace Wims.Core.Commands
 {
     public class SelectBoardCommand : Command
     {
-        public SelectBoardCommand(IList<string> commandLine, IBoardProvider boardProvider)
+        public SelectBoardCommand(IList<string> commandLine)
             : base(commandLine)
         {
-            this.BoardProvider = boardProvider;
         }
 
-        IBoardProvider BoardProvider { get; }
         public override string Execute()
         {
+            var currTeam = CurrentVariables.currentTeam;
+            if (currTeam == null)
+            {
+                var msg = $"You have to select/create team before board selection." + Environment.NewLine +
+                          $"You can you use one of these commands:" + Environment.NewLine +
+                          $"createteam <teamname>, selectteam <teamname>, listteams";
+                throw new Exception(msg);
+            }
+
             if (this.CommandParameters.Count != 1)
             {
                 throw new ArgumentException("Parameters count is not valid!");
@@ -26,12 +32,12 @@ namespace Wims.Core.Commands
 
             var boardToSelect = this.CommandParameters[0];
 
-            if (this.BoardProvider.Boards.Count == 0)
+            if (currTeam.Boards.Count == 0)
             {
-                return $"There's no any team to select!{Environment.NewLine} You can create it with command: createteam {boardToSelect}.";
+                return $"There's no any board to select from in team {currTeam.Name}!{Environment.NewLine} You can create it with command: createboard {boardToSelect}.";
             }
 
-            foreach (var board in this.BoardProvider.Boards) //TODO Linq
+            foreach (var board in currTeam.Boards) //TODO Linq
             {
                 if (board.Name == boardToSelect)
                 {
@@ -40,7 +46,7 @@ namespace Wims.Core.Commands
                 }
             }
 
-            return $"{boardToSelect} does not exists.{Environment.NewLine} You can create it with command: createboard {boardToSelect}.";
+            return $"{boardToSelect} does not exists in team {currTeam.Name}.{Environment.NewLine} You can create it with command: createboard {boardToSelect}.";
         }
     }
 }
