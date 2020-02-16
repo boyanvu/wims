@@ -16,7 +16,7 @@ namespace Wims.Core.Factories
         IBoard CreateBoard(string name);
 
         Bug CreateBug(string title, string description, Priority priority,
-            Severity severity, StatusBug statusBug, IMember assignee);
+            Severity severity, StatusBug statusBug);
 
     }
 }

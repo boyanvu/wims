@@ -1,8 +1,6 @@
 ﻿using Wims.Models.Common;
 using System;
 using System.Collections.Generic;
-using System.Text;
-using Wims.Models.Common;
 using Wims.Models.Contracts;
 
 namespace Wims.Models
@@ -15,14 +13,14 @@ namespace Wims.Models
         private IMember assignee;
 
 
-        public Bug(string title, string description, Priority priority, Severity severity, StatusBug statusBug, IMember assignee)
+        public Bug(string title, string description, Priority priority, Severity severity, StatusBug statusBug)
             : base(title, description)
         {
             this.Priority = priority;
             this.Severity = severity;
             this.Status = statusBug;
             this.StepsToReproduce = new List<string>();
-            this.Assignee = assignee;
+            this.Assignee = null;
         }
 
 

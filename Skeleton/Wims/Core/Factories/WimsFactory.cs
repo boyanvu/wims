@@ -15,13 +15,9 @@ namespace Wims.Core.Factories
             return new Board(name);
         }
 
-        public Bug CreateBug(string title, string description, Priority priority, Severity severity, StatusBug statusBug, IMember assignee)
+        public Bug CreateBug(string title, string description, Priority priority, Severity severity, StatusBug statusBug)
         {
-            var bugPriority = (Priority)Enum.Parse(typeof(Priority), priority.ToString());
-            var bugSeverity = (Severity)Enum.Parse(typeof(Severity), severity.ToString());
-            var bugStatus = (StatusBug)Enum.Parse(typeof(StatusBug), statusBug.ToString());
-
-            return new Bug(title, description, bugPriority, bugSeverity, bugStatus, assignee);
+            return new Bug(title, description, priority, severity, statusBug);
         }
 
         public IMember CreateMember(string name)

@@ -13,6 +13,7 @@ namespace Wims.Core.Providers
         private static readonly ITeamProvider teamProvider = new TeamProvider();
         private static readonly IBoardProvider boardProvider = new BoardProvider();
         private static readonly IMemberProvider memberProvider = new MemberProvider();
+        private static readonly IWorkItemProvider workItemProvider = new WorkItemProvider();
 
         public ICommand ParseCommand(string commandLine)
         {
@@ -35,6 +36,8 @@ namespace Wims.Core.Providers
                 "listallteammembers" => new ListAllTeamMembersCommand(parameters, teamProvider),
                 "listallboards" => new ListAllBoardsCommand(parameters, boardProvider),
                 "listallteamboards" => new ListAllTeamBoardsCommand(parameters, boardProvider),
+                "createbug" => new CreateBugCommand(parameters, workItemProvider),
+                "listallteamitems" => new ListAllTeamItemsCommand(parameters, workItemProvider),
 
 
                 _ => throw new InvalidOperationException("Command does not exist")
