@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Wims.Models;
+﻿using Wims.Models;
 using Wims.Models.Common;
 using Wims.Models.Contracts;
 
@@ -17,6 +14,9 @@ namespace Wims.Core.Factories
 
         Bug CreateBug(string title, string description, Priority priority,
             Severity severity, StatusBug statusBug);
+
+        Story CreateStory(string title, string description, Priority priority,
+            Size size, StatusStory status);
 
     }
 }
