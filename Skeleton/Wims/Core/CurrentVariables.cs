@@ -1,4 +1,5 @@
-﻿using Wims.Models.Contracts;
+﻿using System;
+using Wims.Models.Contracts;
 
 namespace Wims.Core
 {

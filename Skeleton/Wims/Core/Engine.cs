@@ -1,4 +1,5 @@
 ﻿using System;
+using Wims.Core;
 using Wims.Core.Contracts;
 using Wims.Core.Providers;
 
@@ -61,6 +62,7 @@ namespace OlympicGames.Core
         private void Print(string msg)
         {
             Console.WriteLine(msg);
+            Console.WriteLine(CurrentVariables.CurrentPosition());
         }
     }
 }
