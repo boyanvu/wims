@@ -13,12 +13,12 @@ namespace Wims.Models
         private IMember assignee;
 
 
-        public Bug(string title, string description, Priority priority, Severity severity, StatusBug statusBug)
+        public Bug(string title, string description, Priority priority, Severity severity)
             : base(title, description)
         {
             this.Priority = priority;
             this.Severity = severity;
-            this.Status = statusBug;
+            this.Status = StatusBug.Active;
             this.StepsToReproduce = new List<string>();
             this.Assignee = null;
         }

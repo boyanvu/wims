@@ -13,7 +13,7 @@ namespace Wims.Core.Factories
         IBoard CreateBoard(string name);
 
         Bug CreateBug(string title, string description, Priority priority,
-            Severity severity, StatusBug statusBug);
+            Severity severity);
 
         Story CreateStory(string title, string description, Priority priority,
             Size size, StatusStory status);

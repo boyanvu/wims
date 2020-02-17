@@ -12,9 +12,9 @@ namespace Wims.Core.Factories
             return new Board(name);
         }
 
-        public Bug CreateBug(string title, string description, Priority priority, Severity severity, StatusBug statusBug)
+        public Bug CreateBug(string title, string description, Priority priority, Severity severity)
         {
-            return new Bug(title, description, priority, severity, statusBug);
+            return new Bug(title, description, priority, severity);
         }
 
         public Story CreateStory(string title, string description, Priority priority, Size size, StatusStory status)
