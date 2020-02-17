@@ -40,6 +40,7 @@ namespace Wims.Core.Providers
                 "createstory" => new CreateStoryCommand(parameters, workItemProvider),
                 "createfeedback" => new CreateFeedbackCommand(parameters, workItemProvider),
                 "listallteamitems" => new ListAllTeamItemsCommand(parameters, workItemProvider),
+                "modifybug" => new ModifyBugCommand(parameters, workItemProvider),
 
 
                 _ => throw new InvalidOperationException("Command does not exist")
