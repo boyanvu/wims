@@ -22,6 +22,11 @@ namespace Wims.Core.Factories
             return new Story(title, description, priority, size, status);
         }
 
+        public Feedback CreateFeedback(string title, string description, int rating, StatusFeedback status)
+        {
+            return new Feedback(title, description, rating, status);
+        }
+
         public IMember CreateMember(string name)
         {
             return new Member(name);

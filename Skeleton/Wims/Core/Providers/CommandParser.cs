@@ -37,6 +37,8 @@ namespace Wims.Core.Providers
                 "listallboards" => new ListAllBoardsCommand(parameters, boardProvider),
                 "listallteamboards" => new ListAllTeamBoardsCommand(parameters, boardProvider),
                 "createbug" => new CreateBugCommand(parameters, workItemProvider),
+                "createstory" => new CreateStoryCommand(parameters, workItemProvider),
+                "createfeedback" => new CreateFeedbackCommand(parameters, workItemProvider),
                 "listallteamitems" => new ListAllTeamItemsCommand(parameters, workItemProvider),
 
 
