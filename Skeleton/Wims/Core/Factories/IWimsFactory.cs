@@ -18,7 +18,7 @@ namespace Wims.Core.Factories
         Story CreateStory(string title, string description, Priority priority,
             Size size, StatusStory status);
 
-        Feedback CreateFeedback(string title, string description, int rating, StatusFeedback status);
+        Feedback CreateFeedback(string title, string description, int rating);
 
     }
 }

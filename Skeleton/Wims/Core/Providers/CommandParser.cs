@@ -41,6 +41,7 @@ namespace Wims.Core.Providers
                 "createfeedback" => new CreateFeedbackCommand(parameters, workItemProvider),
                 "listallteamitems" => new ListAllTeamItemsCommand(parameters, workItemProvider),
                 "modifybug" => new ModifyBugCommand(parameters, workItemProvider),
+                "modifyfeedback" => new ModifyFeedbackCommand(parameters, workItemProvider),
 
 
                 _ => throw new InvalidOperationException("Command does not exist")

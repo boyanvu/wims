@@ -6,11 +6,11 @@ namespace Wims.Models
     public class Feedback : WorkItem
     {
         private int rating;
-        public Feedback(string title, string description, int rating, StatusFeedback status)
+        public Feedback(string title, string description, int rating)
             : base(title, description)
         {
             this.Rating = rating;
-            this.Status = status;
+            this.Status = StatusFeedback.New;
         }
 
         public int Rating

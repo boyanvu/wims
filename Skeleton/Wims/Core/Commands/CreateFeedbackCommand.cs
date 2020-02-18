@@ -39,7 +39,7 @@ namespace Wims.Core.Commands
                 }
             }
 
-            var newFeedback = this.Factory.CreateFeedback(title, description, rating, status);
+            var newFeedback = this.Factory.CreateFeedback(title, description, rating);
 
             currBoardItems.Add(newFeedback);
 

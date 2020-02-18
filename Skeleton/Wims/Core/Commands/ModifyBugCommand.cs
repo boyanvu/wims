@@ -33,51 +33,19 @@ namespace Wims.Core.Commands
 
             if (this.CommandParameters[1] == "priority")
             {
-                if (this.CommandParameters[2] == "high")
-                {
-                    bugToModify.Priority = Priority.High;
-                }
-                if (this.CommandParameters[2] == "medium")
-                {
-                    bugToModify.Priority = Priority.Medium;
-                }
-                if (this.CommandParameters[2] == "low")
-                {
-                    bugToModify.Priority = Priority.Low;
-                }
+                bugToModify.Priority = ValidateEnums.ValidatePriority(this.CommandParameters[2]);
+
             }
             else if (this.CommandParameters[1] == "severity")
             {
-                if (this.CommandParameters[2] == "critical")
-                {
-                    bugToModify.Severity = Severity.Critical;
-                }
-                if (this.CommandParameters[2] == "major")
-                {
-                    bugToModify.Severity = Severity.Major;
-                }
-                if (this.CommandParameters[2] == "minor")
-                {
-                    bugToModify.Severity = Severity.Minor;
-                }
+                bugToModify.Severity = ValidateEnums.ValidateSeverity(this.CommandParameters[2]);
             }
             else if (this.CommandParameters[1] == "status")
             {
-                if (this.CommandParameters[2] == "active")
-                {
-                    bugToModify.Status = StatusBug.Active;
-                }
-                if (this.CommandParameters[2] == "fixed")
-                {
-                    bugToModify.Status = StatusBug.Fixed;
-                }
-
+                bugToModify.Status = ValidateEnums.ValidateStatusBug(this.CommandParameters[2]);
             }
 
-            return $"{bugToModify.Title} bug's {this.CommandParameters[1]} was modified to {this.CommandParameters[2]} {CurrentVariables.currentBoard.Name} board!";
-
+            return $"{bugToModify.Title} bug's {this.CommandParameters[1]} was modified to {this.CommandParameters[2]} in {CurrentVariables.currentBoard.Name} board!";
         }
-
-
     }
 }
