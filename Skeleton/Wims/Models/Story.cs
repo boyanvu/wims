@@ -1,4 +1,5 @@
-﻿using Wims.Models.Contracts;
+﻿using System;
+using Wims.Models.Contracts;
 
 namespace Wims.Models.Common
 {
@@ -19,5 +20,15 @@ namespace Wims.Models.Common
         public StatusStory Status { get; }
 
         public IMember Assignee { get; }
+
+        public override string Print()
+        {
+            return $"{this.GetType().Name}:{Environment.NewLine}  " +
+                $"Title: {this.Title}{Environment.NewLine}  " +
+                $"Description: {this.Description}{Environment.NewLine}  " +
+                $"Priority: {this.Priority}{Environment.NewLine}  " +
+                $"Size: {this.Size}{Environment.NewLine}  " +
+                $"Status: {this.Status}{Environment.NewLine}  ";
+        }
     }
 }

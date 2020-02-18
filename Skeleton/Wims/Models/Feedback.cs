@@ -27,5 +27,17 @@ namespace Wims.Models
         }
 
         public StatusFeedback Status { get; set; }
+
+        public override string Print()
+        {
+            return $"{this.GetType().Name}:{Environment.NewLine}  " +
+                $"Title: {this.Title}{Environment.NewLine}  " +
+                $"Description: {this.Description}{Environment.NewLine}  " +
+                $"Rating: {this.Rating}{Environment.NewLine}  " +
+                $"Status: {this.Status}{Environment.NewLine}  ";
+        }
     }
+
+
+
 }

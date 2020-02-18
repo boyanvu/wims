@@ -42,7 +42,7 @@ namespace Wims.Core.Providers
                 "listallteamitems" => new ListAllTeamItemsCommand(parameters, workItemProvider),
                 "modifybug" => new ModifyBugCommand(parameters, workItemProvider),
                 "modifyfeedback" => new ModifyFeedbackCommand(parameters, workItemProvider),
-                "listallitems" => new ListAllTeamItemsCommand(parameters, workItemProvider),
+                "listallitems" => new ListAllItemsCommand(parameters, workItemProvider),
 
 
                 _ => throw new InvalidOperationException("Command does not exist")

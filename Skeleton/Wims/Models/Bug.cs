@@ -76,5 +76,15 @@ namespace Wims.Models
                 this.assignee = value;
             }
         }
+
+        public override string Print()
+        {
+            return $"{this.GetType().Name}:{Environment.NewLine}  " +
+                $"Title: {this.Title}{Environment.NewLine}  " +
+                $"Description: {this.Description}{Environment.NewLine}  " +
+                $"Priority: {this.Priority}{Environment.NewLine}  " +
+                $"Severity: {this.Severity}{Environment.NewLine}  " +
+                $"Status: {this.Status}{Environment.NewLine}  ";
+        }
     }
 }

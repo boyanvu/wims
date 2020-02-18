@@ -42,7 +42,7 @@ namespace Wims.Core.Commands
 
             var newBug = this.Factory.CreateBug(title, description, priority, severity);
 
-
+            this.WorkItemProvider.Add(newBug);
             currBoardItems.Add(newBug);
 
             return $"{newBug.Title} bug added to {CurrentVariables.currentBoard.Name} board!";

@@ -43,6 +43,7 @@ namespace Wims.Core.Commands
 
             var newStory = this.Factory.CreateStory(title, description, priority, size, status);
 
+            this.WorkItemProvider.Add(newStory);
             currBoardItems.Add(newStory);
 
             return $"{newStory.Title} story added to {CurrentVariables.currentBoard.Name} board!";

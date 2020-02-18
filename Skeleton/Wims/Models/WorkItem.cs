@@ -72,9 +72,6 @@ namespace Wims.Models
 
         public IList<string> History { get; }
 
-        public string Print()
-        {
-            return $"{this.GetType().Name}:{Environment.NewLine}  Title: {this.Title}{Environment.NewLine}  Description: {this.Description}";
-        }
+        public abstract string Print();
     }
 }
