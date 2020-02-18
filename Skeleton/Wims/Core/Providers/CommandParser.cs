@@ -43,6 +43,7 @@ namespace Wims.Core.Providers
                 "modifybug" => new ModifyBugCommand(parameters, workItemProvider),
                 "modifyfeedback" => new ModifyFeedbackCommand(parameters, workItemProvider),
                 "listallitems" => new ListAllItemsCommand(parameters, workItemProvider),
+                "listfilterallitems" => new ListFilterAllItemsCommand(parameters, workItemProvider),
 
 
                 _ => throw new InvalidOperationException("Command does not exist")
