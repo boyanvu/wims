@@ -46,6 +46,7 @@ namespace Wims.Core.Providers
                 "listallitems" => new ListAllItemsCommand(parameters, workItemProvider),
                 "listfilterallitems" => new ListFilterAllItemsCommand(parameters, workItemProvider),
                 "assign" => new AssignCommand(parameters),
+                "unassign" => new UnassignCommand(parameters),
 
                 _ => throw new InvalidOperationException("Command does not exist")
             };
