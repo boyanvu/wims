@@ -74,7 +74,7 @@ namespace Wims.Models
 
         public string Print()
         {
-            return $"{this.Title} {this.Description}";
+            return $"{this.GetType().Name}:{Environment.NewLine}  Title: {this.Title}{Environment.NewLine}  Description: {this.Description}";
         }
     }
 }
