@@ -44,7 +44,7 @@ namespace Wims.Core.Commands
                     builder.AppendLine(bug.Print());
                 }
             }
-            if (this.CommandParameters[0] == "stories")
+            if (this.CommandParameters[0] == "story")
             {
                 foreach (var story in stories)
                 {

@@ -21,7 +21,7 @@ namespace Wims.Core.Providers
                 .Trim()
                 .Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
-            var commandName = lineParameters[0];
+            var commandName = lineParameters[0].ToLower();
             var parameters = lineParameters.Skip(1).ToList();
 
             return commandName switch
@@ -41,6 +41,7 @@ namespace Wims.Core.Providers
                 "createfeedback" => new CreateFeedbackCommand(parameters, workItemProvider),
                 "listallteamitems" => new ListAllTeamItemsCommand(parameters, workItemProvider),
                 "modifybug" => new ModifyBugCommand(parameters, workItemProvider),
+                "modifystory" => new ModifyStoryCommand(parameters, workItemProvider),
                 "modifyfeedback" => new ModifyFeedbackCommand(parameters, workItemProvider),
                 "listallitems" => new ListAllItemsCommand(parameters, workItemProvider),
                 "listfilterallitems" => new ListFilterAllItemsCommand(parameters, workItemProvider),

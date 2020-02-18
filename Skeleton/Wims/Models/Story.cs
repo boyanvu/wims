@@ -13,13 +13,13 @@ namespace Wims.Models.Common
             this.Status = status;
             this.Assignee = null;
         }
-        public Priority Priority { get; }
+        public Priority Priority { get; set; }
 
-        public Size Size { get; }
+        public Size Size { get; set; }
 
-        public StatusStory Status { get; }
+        public StatusStory Status { get; set; }
 
-        public IMember Assignee { get; }
+        public IMember Assignee { get; set; }
 
         public override string Print()
         {
