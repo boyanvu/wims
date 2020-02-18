@@ -2,10 +2,11 @@
 using System;
 using System.Collections.Generic;
 using Wims.Models.Contracts;
+using Wims.Models.WorkItems.Contracts;
 
 namespace Wims.Models
 {
-    public class Bug : WorkItem, IBug
+    public class Bug : WorkItem, IBug, IAssignable
     {
         private Priority priority;
         private Severity severity;
@@ -79,12 +80,15 @@ namespace Wims.Models
 
         public override string Print()
         {
+            var assigneeName = this.Assignee == null ? "-" : this.Assignee.Name;
+
             return $"{this.GetType().Name}:{Environment.NewLine}  " +
                 $"Title: {this.Title}{Environment.NewLine}  " +
                 $"Description: {this.Description}{Environment.NewLine}  " +
                 $"Priority: {this.Priority}{Environment.NewLine}  " +
                 $"Severity: {this.Severity}{Environment.NewLine}  " +
-                $"Status: {this.Status}{Environment.NewLine}  ";
+                $"Status: {this.Status}{Environment.NewLine}  " +
+                $"Assignee: {assigneeName} ";
         }
     }
 }

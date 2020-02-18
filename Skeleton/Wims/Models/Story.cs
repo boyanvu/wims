@@ -1,9 +1,11 @@
 ﻿using System;
+using Wims.Core.Contracts;
 using Wims.Models.Contracts;
+using Wims.Models.WorkItems.Contracts;
 
 namespace Wims.Models.Common
 {
-    public class Story : WorkItem, IStory
+    public class Story : WorkItem, IStory, IAssignable
     {
         public Story(string title, string description, Priority priority, Size size, StatusStory status)
             : base(title, description)
@@ -23,12 +25,15 @@ namespace Wims.Models.Common
 
         public override string Print()
         {
+            var assigneeName = this.Assignee == null ? "-" : this.Assignee.Name;
+
             return $"{this.GetType().Name}:{Environment.NewLine}  " +
                 $"Title: {this.Title}{Environment.NewLine}  " +
                 $"Description: {this.Description}{Environment.NewLine}  " +
                 $"Priority: {this.Priority}{Environment.NewLine}  " +
                 $"Size: {this.Size}{Environment.NewLine}  " +
-                $"Status: {this.Status}{Environment.NewLine}  ";
+                $"Status: {this.Status}{Environment.NewLine}  " +
+                $"Assignee: {assigneeName} ";
         }
     }
 }
