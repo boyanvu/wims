@@ -14,5 +14,11 @@ namespace Wims.Core
             var currPos = $" - Team: { currTeam } | Board: {currBoard} - " + Environment.NewLine + "-------------------";
             return currPos;
         }
+
+
+        public static void AddToWIHistory(IWorkItem item)
+        {
+            item.History.Add($"{item.Title} {item.GetType().Name.ToLower()} created in {CurrentVariables.currentBoard.Name}");
+        }
     }
 }

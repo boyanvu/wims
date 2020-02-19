@@ -41,6 +41,7 @@ namespace Wims.Core.Commands
 
             var newFeedback = this.Factory.CreateFeedback(title, description, rating);
 
+            CurrentVariables.AddToWIHistory(newFeedback);
             this.WorkItemProvider.Add(newFeedback);
             currBoardItems.Add(newFeedback);
 

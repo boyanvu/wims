@@ -11,5 +11,7 @@ namespace Wims.Core.Contracts
 
         void Add(IWorkItem item);
 
+        public IWorkItem Find(string title);
+
     }
 }

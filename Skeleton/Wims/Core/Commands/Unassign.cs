@@ -39,6 +39,9 @@ namespace Wims.Core.Commands
 
             wi.Assignee = null;
 
+            workItem.History.Add($"{workItem.Title} {workItem.GetType().Name.ToLower()} has been unassigned from {currAssignee}");
+
+
             return $"{currAssignee} has been unassigned from {workItemTitle}";
         }
     }

@@ -42,6 +42,8 @@ namespace Wims.Core.Commands
 
             var newBug = this.Factory.CreateBug(title, description, priority, severity);
 
+
+            CurrentVariables.AddToWIHistory(newBug);
             this.WorkItemProvider.Add(newBug);
             currBoardItems.Add(newBug);
 

@@ -43,6 +43,8 @@ namespace Wims.Core.Commands
 
             var newStory = this.Factory.CreateStory(title, description, priority, size, status);
 
+
+            CurrentVariables.AddToWIHistory(newStory);
             this.WorkItemProvider.Add(newStory);
             currBoardItems.Add(newStory);
 

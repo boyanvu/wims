@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using Wims.Core.Contracts;
 using Wims.Models.Contracts;
@@ -20,6 +21,13 @@ namespace Wims.Core.Providers
         public void Add(IWorkItem item)
         {
             workItems.Add(item);
+        }
+
+
+        public IWorkItem Find(string title)
+        {
+            var wi = workItems.FirstOrDefault(m => m.Title == title);
+            return wi;
         }
     }
 }
