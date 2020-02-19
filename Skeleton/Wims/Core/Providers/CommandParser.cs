@@ -50,6 +50,7 @@ namespace Wims.Core.Providers
                 "viewworkitemhistory" => new ViewWorkItemHistoryCommand(parameters, workItemProvider),
                 "viewboardhistory" => new ViewBoardHistoryCommand(parameters, boardProvider),
                 "viewmemberhistory" => new ViewMemberHistoryCommand(parameters, memberProvider),
+                "viewteamhistory" => new ViewTeamHistoryCommand(parameters, teamProvider),
 
                 _ => throw new InvalidOperationException("Command does not exist")
             };

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 using Wims.Models.Contracts;
 
 namespace Wims.Core
@@ -28,6 +29,20 @@ namespace Wims.Core
             {
                 board.History.Add(itemHistory);
             }
+        }
+
+        public static string GetTeamHistory(ITeam team)
+        {
+            var builder = new StringBuilder();
+            foreach (var board in team.Boards)
+            {
+                builder.AppendLine(string.Join(Environment.NewLine, board.History));
+            }
+            foreach (var member in team.Members)
+            {
+                builder.AppendLine(string.Join(Environment.NewLine, member.History));
+            }
+            return builder.ToString().TrimEnd();
         }
     }
 }
