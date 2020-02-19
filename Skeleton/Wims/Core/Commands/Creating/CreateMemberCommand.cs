@@ -45,6 +45,8 @@ namespace Wims.Core.Commands
             var member = this.Factory.CreateMember(
             this.CommandParameters[0]);
 
+
+            member.History.Add($"{member.Name} {member.GetType().Name} was created in {currentTeam.Name} team!");
             this.MemberProvider.Add(member);
             currentTeam.Members.Add(member);
 

@@ -39,6 +39,7 @@ namespace Wims.Core.Commands
 
             wi.Assignee = assignee;
 
+            assignee.History.Add($"{workItem.Title} {workItem.GetType().Name.ToLower()} has been assigned to {assigneeName}");
             workItem.History.Add($"{workItem.Title} {workItem.GetType().Name.ToLower()} has been assigned to {assigneeName}");
             CurrentVariables.currentBoard.History.Add($"{workItem.Title} {workItem.GetType().Name.ToLower()} has been assigned to {assigneeName}");
 

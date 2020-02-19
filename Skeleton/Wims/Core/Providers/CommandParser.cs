@@ -49,6 +49,7 @@ namespace Wims.Core.Providers
                 "unassign" => new UnassignCommand(parameters),
                 "viewworkitemhistory" => new ViewWorkItemHistoryCommand(parameters, workItemProvider),
                 "viewboardhistory" => new ViewBoardHistoryCommand(parameters, boardProvider),
+                "viewmemberhistory" => new ViewMemberHistoryCommand(parameters, memberProvider),
 
                 _ => throw new InvalidOperationException("Command does not exist")
             };
