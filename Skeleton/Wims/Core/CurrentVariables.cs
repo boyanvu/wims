@@ -20,5 +20,14 @@ namespace Wims.Core
         {
             item.History.Add($"{item.Title} {item.GetType().Name.ToLower()} created in {CurrentVariables.currentBoard.Name}");
         }
+
+
+        public static void AddToBoardHistory(IBoard board, IWorkItem item)
+        {
+            foreach (var itemHistory in item.History)
+            {
+                board.History.Add(itemHistory);
+            }
+        }
     }
 }

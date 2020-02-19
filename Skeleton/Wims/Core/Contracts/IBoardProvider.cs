@@ -10,5 +10,7 @@ namespace Wims.Core.Contracts
         IReadOnlyList<IBoard> Boards { get; }
 
         void Add(IBoard board);
+
+        public IBoard Find(string name);
     }
 }

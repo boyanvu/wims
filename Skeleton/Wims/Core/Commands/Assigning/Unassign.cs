@@ -40,6 +40,7 @@ namespace Wims.Core.Commands
             wi.Assignee = null;
 
             workItem.History.Add($"{workItem.Title} {workItem.GetType().Name.ToLower()} has been unassigned from {currAssignee}");
+            CurrentVariables.currentBoard.History.Add($"{workItem.Title} {workItem.GetType().Name.ToLower()} has been assigned to {currAssignee}");
 
 
             return $"{currAssignee} has been unassigned from {workItemTitle}";

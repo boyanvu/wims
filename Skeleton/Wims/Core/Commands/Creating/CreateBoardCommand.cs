@@ -53,6 +53,7 @@ namespace Wims.Core.Commands
             currTeam.Boards.Add(board);
 
             CurrentVariables.currentBoard = board;
+            CurrentVariables.currentBoard.History.Add($"{boardName} board created!");
 
             return $"Created Board {Environment.NewLine}{board.Print()}";
         }

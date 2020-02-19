@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using Wims.Core.Contracts;
 using Wims.Models.Contracts;
@@ -21,6 +22,12 @@ namespace Wims.Core.Providers
         public void Add(IBoard board)
         {
             boards.Add(board);
+        }
+
+        public IBoard Find(string name)
+        {
+            var board = boards.FirstOrDefault(b => b.Name == name);
+            return board;
         }
     }
 }

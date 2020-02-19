@@ -45,6 +45,7 @@ namespace Wims.Core.Commands
 
 
             CurrentVariables.AddToWIHistory(newStory);
+            CurrentVariables.AddToBoardHistory(CurrentVariables.currentBoard, newStory);
             this.WorkItemProvider.Add(newStory);
             currBoardItems.Add(newStory);
 
