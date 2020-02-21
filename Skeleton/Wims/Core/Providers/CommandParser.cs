@@ -55,6 +55,7 @@ namespace Wims.Core.Providers
                 "addstepstobug" => new AddStepsToBug(parameters),
                 "addcomment" => new AddCommentCommand(parameters, memberProvider),
                 "filterallbugsbyassignee" => new FilterAllBugsByAssigneeCommand(parameters, workItemProvider, memberProvider),
+                "filterallbugsbystatus" => new FilterAllBugsByStatusCommand(parameters, workItemProvider),
 
                 _ => throw new InvalidOperationException("Command does not exist")
             };
