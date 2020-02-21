@@ -30,7 +30,7 @@ namespace Wims.Core.Commands
             {
                 foreach (var member in members)
                 {
-                    builder.AppendLine(member.Print());
+                    builder.AppendLine(member.ToString());
                 }
             }
            

@@ -34,7 +34,7 @@ namespace Wims.Core.Commands
             {
                 foreach (var board in boards)
                 {
-                    builder.AppendLine(board.Print());
+                    builder.AppendLine(board.ToString());
                 }
             }
             

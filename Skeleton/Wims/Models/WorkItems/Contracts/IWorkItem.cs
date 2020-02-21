@@ -12,6 +12,6 @@ namespace Wims.Models.Contracts
         IList<string> Comments { get; }
         IList<string> History { get; }
 
-        string Print();
+        
     }
 }

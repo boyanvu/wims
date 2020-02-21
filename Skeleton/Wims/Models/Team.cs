@@ -32,7 +32,7 @@ namespace Wims.Models
 
         public IList<IBoard> Boards { get; }
 
-        public string Print()
+        public override string ToString()
         {
             return $"{this.Name}";
         }

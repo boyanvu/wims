@@ -41,21 +41,21 @@ namespace Wims.Core.Commands
             {
                 foreach (var bug in bugs)
                 {
-                    builder.AppendLine(bug.Print());
+                    builder.AppendLine(bug.ToString());
                 }
             }
             if (this.CommandParameters[0] == "story")
             {
                 foreach (var story in stories)
                 {
-                    builder.AppendLine(story.Print());
+                    builder.AppendLine(story.ToString());
                 }
             }
             if (this.CommandParameters[0] == "feedback")
             {
                 foreach (var feedback in feedbacks)
                 {
-                    builder.AppendLine(feedback.Print());
+                    builder.AppendLine(feedback.ToString());
                 }
             }
 

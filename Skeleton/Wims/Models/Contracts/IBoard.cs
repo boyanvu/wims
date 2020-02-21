@@ -11,6 +11,6 @@ namespace Wims.Models.Contracts
         IList<IWorkItem> WorkItems { get; }
         IList<string> History { get; }
 
-        string Print();
+      
     }
 }

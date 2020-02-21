@@ -33,7 +33,7 @@ namespace Wims.Core.Commands
             {
                 foreach (var item in allItems)
                 {
-                    builder.AppendLine(item.Print());
+                    builder.AppendLine(item.ToString());
                 }
             }
 

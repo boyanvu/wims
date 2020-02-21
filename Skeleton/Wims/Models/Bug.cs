@@ -78,19 +78,18 @@ namespace Wims.Models
             }
         }
 
-        public override string Print()
+        public override string ToString()
         {
             var assigneeName = this.Assignee == null ? "-" : this.Assignee.Name;
-            var stepsToReprod = string.Join(">", this.StepsToReproduce);
 
             return $"{this.GetType().Name}:{Environment.NewLine}  " +
                 $"Title: {this.Title}{Environment.NewLine}  " +
                 $"Description: {this.Description}{Environment.NewLine}  " +
-                $"Steps to reproduce: {stepsToReprod}{Environment.NewLine}  " +
                 $"Priority: {this.Priority}{Environment.NewLine}  " +
                 $"Severity: {this.Severity}{Environment.NewLine}  " +
                 $"Status: {this.Status}{Environment.NewLine}  " +
-                $"Assignee: {assigneeName} ";
+                $"Assignee: {assigneeName}{Environment.NewLine}  " +
+                $"Comments: {String.Join(" ", this.Comments)}{Environment.NewLine} ";
         }
     }
 }

@@ -23,7 +23,7 @@ namespace Wims.Models.Common
 
         public IMember Assignee { get; set; }
 
-        public override string Print()
+        public override string ToString()
         {
             var assigneeName = this.Assignee == null ? "-" : this.Assignee.Name;
 
@@ -33,7 +33,8 @@ namespace Wims.Models.Common
                 $"Priority: {this.Priority}{Environment.NewLine}  " +
                 $"Size: {this.Size}{Environment.NewLine}  " +
                 $"Status: {this.Status}{Environment.NewLine}  " +
-                $"Assignee: {assigneeName} ";
+                $"Assignee: {assigneeName} " +
+                $"Comments: {String.Join(" ", this.Comments)}{Environment.NewLine} ";
         }
     }
 }

@@ -42,10 +42,10 @@ namespace Wims.Models
         public IList<string> History { get; }
 
 
-        public string Print()
+      
+        public override string ToString()
         {
             return $"{this.Name}";
         }
-
     }
 }

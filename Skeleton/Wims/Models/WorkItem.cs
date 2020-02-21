@@ -72,6 +72,6 @@ namespace Wims.Models
 
         public IList<string> History { get; }
 
-        public abstract string Print();
+       
     }
 }
