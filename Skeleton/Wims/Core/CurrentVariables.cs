@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Text;
 using Wims.Models.Contracts;
 
@@ -43,6 +44,22 @@ namespace Wims.Core
                 builder.AppendLine(string.Join(Environment.NewLine, member.History));
             }
             return builder.ToString().TrimEnd();
+        }
+
+        public static IWorkItem GetWorkItem(string workItemTitle, string workItemType)
+        {
+
+            var currBoardItems = CurrentVariables.currentBoard.WorkItems;
+            var teamWorkItemsOfType = currBoardItems.Where(b => b.GetType().Name == workItemType);
+
+            var workItem = teamWorkItemsOfType.FirstOrDefault(b => b.Title == workItemTitle);
+            if (workItem == null)
+            {
+                throw new ArgumentException
+                    ($"There's no work item {workItemTitle} of type {workItemType} in board {CurrentVariables.currentBoard.Name}.");
+            }
+
+            return workItem;
         }
     }
 }

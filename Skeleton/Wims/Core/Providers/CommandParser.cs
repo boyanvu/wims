@@ -4,6 +4,7 @@ using System.Linq;
 using Wims.Core.Abstracts;
 using Wims.Core.Commands;
 using Wims.Core.Providers.Wims.Core.Providers;
+using Wims.Core.Commands.Modifying;
 
 namespace Wims.Core.Providers
 {
@@ -51,6 +52,7 @@ namespace Wims.Core.Providers
                 "viewboardhistory" => new ViewBoardHistoryCommand(parameters, boardProvider),
                 "viewmemberhistory" => new ViewMemberHistoryCommand(parameters, memberProvider),
                 "viewteamhistory" => new ViewTeamHistoryCommand(parameters, teamProvider),
+                "addstepstobug" => new AddStepsToBug(parameters),
 
                 _ => throw new InvalidOperationException("Command does not exist")
             };
