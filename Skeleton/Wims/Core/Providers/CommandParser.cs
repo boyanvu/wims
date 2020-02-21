@@ -54,6 +54,7 @@ namespace Wims.Core.Providers
                 "viewteamhistory" => new ViewTeamHistoryCommand(parameters, teamProvider),
                 "addstepstobug" => new AddStepsToBug(parameters),
                 "addcomment" => new AddCommentCommand(parameters, memberProvider),
+                "filterallbugsbyassignee" => new FilterAllBugsByAssigneeCommand(parameters, workItemProvider, memberProvider),
 
                 _ => throw new InvalidOperationException("Command does not exist")
             };
