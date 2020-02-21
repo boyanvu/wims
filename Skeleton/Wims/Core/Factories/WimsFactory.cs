@@ -36,5 +36,10 @@ namespace Wims.Core.Factories
         {
             return new Team(name);
         }
+
+        public Comment CreateComment(string author, string message)
+        {
+            return new Comment(author, message);
+        }
     }
 }

@@ -20,5 +20,7 @@ namespace Wims.Core.Factories
 
         Feedback CreateFeedback(string title, string description, int rating);
 
+
+        Comment CreateComment(string author, string message);
     }
 }

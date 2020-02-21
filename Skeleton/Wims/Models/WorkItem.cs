@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Wims.Models.Contracts;
+using Wims.Models.WorkItems.Contracts;
 
 namespace Wims.Models
 {
@@ -16,7 +17,7 @@ namespace Wims.Models
             this.Id = id++;
             this.Title = title;
             this.Description = description;
-            this.Comments = new List<string>();
+            this.Comments = new List<IComment>();
             this.History = new List<string>();
         }
 
@@ -68,10 +69,13 @@ namespace Wims.Models
             }
         }
 
-        public IList<string> Comments { get; }
+        public IList<IComment> Comments { get; }
 
         public IList<string> History { get; }
 
-       
+        public void AddComment(IComment comment)
+        {
+            this.Comments.Add(comment);
+        }
     }
 }

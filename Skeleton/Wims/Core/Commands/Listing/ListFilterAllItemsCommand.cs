@@ -41,7 +41,7 @@ namespace Wims.Core.Commands
             {
                 foreach (var bug in bugs)
                 {
-                    builder.AppendLine(bug.ToString());
+                    builder.AppendLine(bug.ToString().TrimEnd());
                 }
             }
             if (this.CommandParameters[0] == "story")
