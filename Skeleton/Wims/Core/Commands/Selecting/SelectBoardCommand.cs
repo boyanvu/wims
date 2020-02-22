@@ -36,17 +36,18 @@ namespace Wims.Core.Commands
             {
                 return $"There's no any board to select from in team {currTeam.Name}!{Environment.NewLine} You can create it with command: createboard {boardToSelect}.";
             }
-
-            foreach (var board in currTeam.Boards) //TODO Linq
+     
+            var findBoard = currTeam.Boards.FirstOrDefault(b => b.Name == boardToSelect);
+            if (findBoard == null)
             {
-                if (board.Name == boardToSelect)
-                {
-                    CurrentVariables.currentBoard = board;
-                    return $"Board {boardToSelect} selected";
-                }
+                throw new Exception($"{boardToSelect} does not exist in team" +
+                    $" {currTeam.Name}.{Environment.NewLine} You can create it with command: createboard {boardToSelect}.");
+                
             }
 
-            return $"{boardToSelect} does not exists in team {currTeam.Name}.{Environment.NewLine} You can create it with command: createboard {boardToSelect}.";
+            CurrentVariables.currentBoard = findBoard;
+            return $"Board {boardToSelect} selected";
+         
         }
     }
 }

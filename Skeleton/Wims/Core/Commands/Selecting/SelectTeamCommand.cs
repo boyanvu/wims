@@ -30,16 +30,16 @@ namespace Wims.Core.Commands
                 return $"There's no any team to select!{Environment.NewLine} You can create it with command: createteam {teamToSelect}.";
             }
 
-            foreach (var team in this.TeamProvider.Teams) //TODO Linq
+            var findTeam = this.TeamProvider.Find(teamToSelect);
+            if (findTeam == null)
             {
-                if (team.Name == teamToSelect)
-                {
-                    CurrentVariables.currentTeam = team;
-                    return $"Team {teamToSelect} selected";
-                }
+                throw new Exception ($"{teamToSelect} does not exists.{Environment.NewLine} " +
+                    $"You can create it with command: createteam {teamToSelect}.");
+
             }
 
-            return $"{teamToSelect} does not exists.{Environment.NewLine} You can create it with command: createteam {teamToSelect}.";
+            CurrentVariables.currentTeam = findTeam;
+            return $"Team {teamToSelect} selected";          
         }
     }
 }

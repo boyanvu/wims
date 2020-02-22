@@ -52,7 +52,7 @@ namespace Wims.Core.Providers
                 "viewboardhistory" => new ViewBoardHistoryCommand(parameters, boardProvider),
                 "viewmemberhistory" => new ViewMemberHistoryCommand(parameters, memberProvider),
                 "viewteamhistory" => new ViewTeamHistoryCommand(parameters, teamProvider),
-                "addstepstobug" => new AddStepsToBug(parameters),
+                "addstepstobug" => new AddStepsToBugCommand(parameters),
                 "addcomment" => new AddCommentCommand(parameters, memberProvider),
                 "filterallbugsbyassignee" => new FilterAllBugsByAssigneeCommand(parameters, workItemProvider, memberProvider),
                 "filterallbugsbystatus" => new FilterAllBugsByStatusCommand(parameters, workItemProvider),

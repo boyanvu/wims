@@ -6,9 +6,9 @@ using Wims.Models;
 
 namespace Wims.Core.Commands.Modifying
 {
-    public class AddStepsToBug : Command
+    public class AddStepsToBugCommand : Command
     {
-        public AddStepsToBug(IList<string> commandLine)
+        public AddStepsToBugCommand(IList<string> commandLine)
             : base(commandLine)
         {
         }
