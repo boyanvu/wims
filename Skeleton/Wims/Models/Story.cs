@@ -5,7 +5,7 @@ using Wims.Models.WorkItems.Contracts;
 
 namespace Wims.Models.Common
 {
-    public class Story : WorkItem, IStory, IAssignable
+    public class Story : WorkItem, IStory, ICommon
     {
         public Story(string title, string description, Priority priority, Size size, StatusStory status)
             : base(title, description)
@@ -34,7 +34,7 @@ namespace Wims.Models.Common
                 $"Size: {this.Size}{Environment.NewLine}  " +
                 $"Status: {this.Status}{Environment.NewLine}  " +
                 $"Assignee: {assigneeName}{Environment.NewLine}  " +
-                $"Comments: {String.Join(" ", this.Comments)}{Environment.NewLine} ";
+                $"Comments: {String.Join(" ", this.Comments)}  ";
         }
     }
 }

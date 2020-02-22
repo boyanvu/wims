@@ -59,6 +59,9 @@ namespace Wims.Core.Providers
                 "filterallstoriesbystatus" => new FilterAllStoriesByStatusCommand(parameters, workItemProvider),
                 "filterallstoriesbyassignee" => new FilterAllStoriesByAssigneeCommand(parameters, workItemProvider, memberProvider),
                 "filterallfeedbacksbystatus" => new FilterAllFeedbacksByStatusCommand(parameters, workItemProvider),
+                "sortallitemsbytitle" => new SortAllItemsCommand(parameters, workItemProvider),
+                "sortitemsbyrating" => new SortAllItemsByRatingCommand(parameters,workItemProvider),
+                "sortitemsbypriority" => new SortAllItemsByPriority(parameters, workItemProvider),
 
                 _ => throw new InvalidOperationException("Command does not exist")
             };

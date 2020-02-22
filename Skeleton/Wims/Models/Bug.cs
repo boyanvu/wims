@@ -6,7 +6,7 @@ using Wims.Models.WorkItems.Contracts;
 
 namespace Wims.Models
 {
-    public class Bug : WorkItem, IBug, IAssignable
+    public class Bug : WorkItem, IBug, ICommon
     {
         private Priority priority;
         private Severity severity;

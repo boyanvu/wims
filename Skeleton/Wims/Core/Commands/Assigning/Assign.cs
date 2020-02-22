@@ -32,7 +32,7 @@ namespace Wims.Core.Commands
             var workItem = currBoardItems.FirstOrDefault(wi => wi.Title == workItemTitle) ??
                 throw new ArgumentException($"Work item with title {workItemTitle} does not exist in board {CurrentVariables.currentBoard.Name}.");
 
-            var wi = workItem as IAssignable;
+            var wi = workItem as ICommon;
 
             if (wi == null)
                 throw new ArgumentException($"Work item {workItemTitle} is of type feedback and it is not supposed to have assignee.");
