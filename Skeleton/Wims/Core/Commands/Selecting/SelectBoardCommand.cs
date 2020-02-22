@@ -38,14 +38,10 @@ namespace Wims.Core.Commands
             }
      
             var findBoard = currTeam.Boards.FirstOrDefault(b => b.Name == boardToSelect);
-            if (findBoard == null)
-            {
-                throw new Exception($"{boardToSelect} does not exist in team" +
-                    $" {currTeam.Name}.{Environment.NewLine} You can create it with command: createboard {boardToSelect}.");
-                
-            }
 
-            CurrentVariables.currentBoard = findBoard;
+            CurrentVariables.currentBoard = findBoard ?? throw new Exception($"{boardToSelect} does not exist in team" +
+                    $" {currTeam.Name}.{Environment.NewLine} You can create it with command: createboard {boardToSelect}.");
+
             return $"Board {boardToSelect} selected";
          
         }

@@ -31,15 +31,12 @@ namespace Wims.Core.Commands
             }
 
             var findTeam = this.TeamProvider.Find(teamToSelect);
-            if (findTeam == null)
-            {
-                throw new Exception ($"{teamToSelect} does not exists.{Environment.NewLine} " +
+
+            CurrentVariables.currentTeam = findTeam ?? throw new Exception ($"{teamToSelect} does not exists.{Environment.NewLine} " +
                     $"You can create it with command: createteam {teamToSelect}.");
 
-            }
-
-            CurrentVariables.currentTeam = findTeam;
             CurrentVariables.currentBoard = null;
+
             return $"Team {teamToSelect} selected";          
         }
     }
