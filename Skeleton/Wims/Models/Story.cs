@@ -33,7 +33,7 @@ namespace Wims.Models.Common
                 $"Priority: {this.Priority}{Environment.NewLine}  " +
                 $"Size: {this.Size}{Environment.NewLine}  " +
                 $"Status: {this.Status}{Environment.NewLine}  " +
-                $"Assignee: {assigneeName} " +
+                $"Assignee: {assigneeName}{Environment.NewLine}  " +
                 $"Comments: {String.Join(" ", this.Comments)}{Environment.NewLine} ";
         }
     }

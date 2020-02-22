@@ -56,6 +56,9 @@ namespace Wims.Core.Providers
                 "addcomment" => new AddCommentCommand(parameters, memberProvider),
                 "filterallbugsbyassignee" => new FilterAllBugsByAssigneeCommand(parameters, workItemProvider, memberProvider),
                 "filterallbugsbystatus" => new FilterAllBugsByStatusCommand(parameters, workItemProvider),
+                "filterallstoriesbystatus" => new FilterAllStoriesByStatusCommand(parameters, workItemProvider),
+                "filterallstoriesbyassignee" => new FilterAllStoriesByAssigneeCommand(parameters, workItemProvider, memberProvider),
+                "filterallfeedbacksbystatus" => new FilterAllFeedbacksByStatusCommand(parameters, workItemProvider),
 
                 _ => throw new InvalidOperationException("Command does not exist")
             };
