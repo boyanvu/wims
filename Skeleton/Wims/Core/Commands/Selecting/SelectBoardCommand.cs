@@ -34,7 +34,8 @@ namespace Wims.Core.Commands
 
             if (currTeam.Boards.Count == 0)
             {
-                return $"There's no any board to select from in team {currTeam.Name}!{Environment.NewLine} You can create it with command: createboard {boardToSelect}.";
+                return $"There's no any board to select from in team {currTeam.Name}!{Environment.NewLine} " +
+                    $"You can create it with command: createboard {boardToSelect}.";
             }
      
             var findBoard = currTeam.Boards.FirstOrDefault(b => b.Name == boardToSelect);
