@@ -10,5 +10,7 @@ namespace Wims.Core.Contracts
         IReadOnlyList<ITeam> Teams { get; }
 
         void Add(ITeam team);
+
+        ITeam Find(string name);
     }
 }

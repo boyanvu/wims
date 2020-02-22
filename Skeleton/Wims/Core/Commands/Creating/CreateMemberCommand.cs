@@ -23,7 +23,6 @@ namespace Wims.Core.Commands
                 throw new ArgumentException("Parameters count is not valid!");
             }
 
-            var allMembers = MemberProvider.Members;
             var currentTeam = CurrentVariables.currentTeam;
             if (currentTeam == null)
             {

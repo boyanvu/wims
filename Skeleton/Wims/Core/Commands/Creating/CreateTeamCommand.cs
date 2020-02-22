@@ -23,12 +23,12 @@ namespace Wims.Core.Abstracts
             }
 
             var teamName = this.CommandParameters[0];
-            foreach (var teamToCheck in this.TeamProvider.Teams)
+           
+            var findTeam = this.TeamProvider.Find(teamName);
+            if(findTeam != null)
             {
-                if (teamToCheck.Name == teamName)
-                {
-                    throw new ArgumentException($"Team {teamName} already exists." + Environment.NewLine + "You could see all teams with command listteams.");
-                }
+                throw new ArgumentException($"Team {teamName} already exists." 
+                    + Environment.NewLine + "You could see all teams with command listteams.");
             }
 
             var team = this.Factory.CreateTeam(

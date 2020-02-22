@@ -35,14 +35,12 @@ namespace Wims.Core.Commands
 
             var boardName = this.CommandParameters[0];
 
-            foreach (var boardInTeam in currTeam.Boards)
+            var findBoard = this.BoardProvider.Find(boardName);
+
+            if (findBoard != null)
             {
-                if (boardInTeam.Name == boardName)
-                {
-                    var msg = $"Board with name {boardName} already exists in team {currTeam.Name}" + Environment.NewLine +
-                              $"You can see all available boards with command listboards.";
-                    throw new ArgumentException(msg);
-                }
+                throw new ArgumentException($"Board with name {boardName} already exists in team {currTeam.Name}" + Environment.NewLine +
+                              $"You can see all available boards with command listboards.");
             }
 
             var board = this.Factory.CreateBoard(

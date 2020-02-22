@@ -33,12 +33,11 @@ namespace Wims.Core.Commands
 
             var currBoardItems = CurrentVariables.currentBoard.WorkItems;
 
-            foreach (var boardItem in currBoardItems)
+            var findStory = this.WorkItemProvider.Find(title);
+            if (findStory != null)
             {
-                if (boardItem.Title == title)
-                {
-                    throw new Exception("Story already exists!");
-                }
+                throw new ArgumentException("Story already exists!");
+
             }
 
             var newStory = this.Factory.CreateStory(title, description, priority, size, status);

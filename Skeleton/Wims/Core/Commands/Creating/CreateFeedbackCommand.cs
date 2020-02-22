@@ -31,12 +31,11 @@ namespace Wims.Core.Commands
 
             var currBoardItems = CurrentVariables.currentBoard.WorkItems;
 
-            foreach (var boardItem in currBoardItems)
+            var findFeedback = this.WorkItemProvider.Find(title);
+            if (findFeedback != null)
             {
-                if (boardItem.Title == title)
-                {
-                    throw new Exception($"{title} already exists!");
-                }
+                throw new ArgumentException("Feedback already exists!");
+
             }
 
             var newFeedback = this.Factory.CreateFeedback(title, description, rating);

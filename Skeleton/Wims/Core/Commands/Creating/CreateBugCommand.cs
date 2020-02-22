@@ -32,16 +32,14 @@ namespace Wims.Core.Commands
 
             var currBoardItems = CurrentVariables.currentBoard.WorkItems;
 
-            foreach (var boardItem in currBoardItems)
+            var findBug = this.WorkItemProvider.Find(title);
+            if (findBug != null)
             {
-                if (boardItem.Title == title)
-                {
-                    throw new Exception("Bug already exists!");
-                }
+                throw new ArgumentException("Bug already exists!");
+
             }
 
             var newBug = this.Factory.CreateBug(title, description, priority, severity);
-
 
             CurrentVariables.AddToWIHistory(newBug);
             CurrentVariables.AddToBoardHistory(CurrentVariables.currentBoard, newBug);
@@ -51,8 +49,5 @@ namespace Wims.Core.Commands
             return $"{newBug.Title} bug added to {CurrentVariables.currentBoard.Name} board!";
 
         }
-
-
-
     }
 }
