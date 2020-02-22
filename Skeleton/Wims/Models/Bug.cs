@@ -89,7 +89,8 @@ namespace Wims.Models
                 $"Severity: {this.Severity}{Environment.NewLine}  " +
                 $"Status: {this.Status}{Environment.NewLine}  " +
                 $"Assignee: {assigneeName}{Environment.NewLine}  " +
-                $"Comments: {String.Join(" ", this.Comments)}{Environment.NewLine} ";
+                $"Steps to reproduce: {String.Join(" ", this.StepsToReproduce)}{Environment.NewLine}  " +
+                $"Comments: {String.Join(Environment.NewLine, this.Comments)} ";
         }
     }
 }

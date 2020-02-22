@@ -45,7 +45,7 @@ namespace Wims.Models
 
         public override string ToString()
         {
-            return $"  {this.Author}: {this.Message} - Created on: {this.createdOn}{Environment.NewLine} ".TrimEnd();
+            return $"  {this.Author}: {this.Message} - Created on: {this.createdOn}";
         }
 
     }
