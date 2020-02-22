@@ -38,6 +38,7 @@ namespace Wims.Core.Abstracts
             this.TeamProvider.Add(team);
 
             CurrentVariables.currentTeam = team;
+            CurrentVariables.currentBoard = null;
 
             return $"Created Team{Environment.NewLine}{team.ToString()}";
         }

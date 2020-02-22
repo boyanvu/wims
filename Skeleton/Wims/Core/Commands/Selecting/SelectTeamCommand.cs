@@ -39,6 +39,7 @@ namespace Wims.Core.Commands
             }
 
             CurrentVariables.currentTeam = findTeam;
+            CurrentVariables.currentBoard = null;
             return $"Team {teamToSelect} selected";          
         }
     }
