@@ -31,7 +31,7 @@ namespace Wims.Core.Commands
             var size = ValidateEnums.ValidateStorySize(CommandParameters[3]);
             
 
-            var currBoardItems = CurrentVariables.currentBoard.WorkItems;
+            var currBoardItems = CurrentVariables.currBoardValid().WorkItems;
 
             var findStory = this.WorkItemProvider.Find(title);
             if (findStory != null)
