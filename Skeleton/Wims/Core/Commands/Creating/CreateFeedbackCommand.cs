@@ -27,9 +27,8 @@ namespace Wims.Core.Commands
             var title = this.CommandParameters[0];
             var description = this.CommandParameters[1];
             var rating = int.Parse(CommandParameters[2]);
-            var status = StatusFeedback.New;
 
-            var currBoardItems = CurrentVariables.currentBoard.WorkItems;
+            var currBoardItems = CurrentVariables.currBoardValid().WorkItems;
 
             var findFeedback = this.WorkItemProvider.Find(title);
             if (findFeedback != null)
