@@ -23,18 +23,15 @@ namespace Wims.Models
             }
             set
             {
+                if (value == null)
+                {
+                    throw new ArgumentNullException("Member name must not be null!");
+                }
                 if (value.Length < 5 || value.Length > 15)
                 {
                     throw new ArgumentException("Member name must be between 5 and 15 characters long!");
                 }
-                else if (value == null)
-                {
-                    throw new ArgumentNullException("Member name must not be null!");
-                }
-                else
-                {
-                    this.name = value;
-                }
+                this.name = value;
 
             }
         }

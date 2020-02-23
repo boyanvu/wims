@@ -24,14 +24,15 @@ namespace Wims.Models
             }
             set
             {
-                if(value.Length < 5 || value.Length > 10)
-                {
-                    throw new ArgumentOutOfRangeException("Board name must be between 5 and 10 characters long!");
-                }
-                else if(value == null)
+                if (value == null)
                 {
                     throw new ArgumentNullException("Board name must not be null!");
                 }
+                if (value.Length < 5 || value.Length > 10)
+                {
+                    throw new ArgumentOutOfRangeException("Board name must be between 5 and 10 characters long!");
+                }
+              
                 this.name = value;
             }
         }

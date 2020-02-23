@@ -37,13 +37,13 @@ namespace Wims.Models
             }
             set
             {
+                if (value == null)
+                {
+                    throw new ArgumentNullException("Work item title must not be null!");
+                }
                 if (value.Length < 10 || value.Length > 50)
                 {
-                    throw new ArgumentException("Work item title must be between 10 and 50 characters long!");
-                }
-                else if (value == null)
-                {
-                    throw new ArgumentException("Work item title must not be null!");
+                    throw new ArgumentOutOfRangeException("Work item title must be between 10 and 50 characters long!");
                 }
                 this.title = value;
             }
@@ -57,14 +57,15 @@ namespace Wims.Models
             }
             set
             {
+                if (value == null)
+                {
+                    throw new ArgumentNullException("Work item description must not be null!");
+                }
                 if (value.Length < 10 || value.Length > 500)
                 {
-                    throw new ArgumentException("Work item description must be between 10 and 500 characters long!");
+                    throw new ArgumentOutOfRangeException("Work item description must be between 10 and 500 characters long!");
                 }
-                else if (value == null)
-                {
-                    throw new ArgumentException("Work item description must not be null!");
-                }
+
                 this.description = value;
             }
         }
