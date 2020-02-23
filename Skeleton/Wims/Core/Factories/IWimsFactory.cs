@@ -1,6 +1,7 @@
 ﻿using Wims.Models;
 using Wims.Models.Common;
 using Wims.Models.Contracts;
+using Wims.Models.WorkItems.Contracts;
 
 namespace Wims.Core.Factories
 {
@@ -12,15 +13,15 @@ namespace Wims.Core.Factories
 
         IBoard CreateBoard(string name);
 
-        Bug CreateBug(string title, string description, Priority priority,
+        IBug CreateBug(string title, string description, Priority priority,
             Severity severity);
 
-        Story CreateStory(string title, string description, Priority priority,
-            Size size, StatusStory status);
+        IStory CreateStory(string title, string description, Priority priority,
+            Size size);
 
-        Feedback CreateFeedback(string title, string description, int rating);
+        IFeedback CreateFeedback(string title, string description, int rating);
 
 
-        Comment CreateComment(string author, string message);
+        IComment CreateComment(string author, string message);
     }
 }

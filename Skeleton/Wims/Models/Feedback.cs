@@ -1,9 +1,10 @@
 ﻿using System;
 using Wims.Models.Common;
+using Wims.Models.Contracts;
 
 namespace Wims.Models
 {
-    public class Feedback : WorkItem
+    public class Feedback : WorkItem, IFeedback
     {
         private int rating;
         public Feedback(string title, string description, int rating)

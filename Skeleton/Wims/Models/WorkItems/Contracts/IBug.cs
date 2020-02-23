@@ -5,7 +5,7 @@ using Wims.Models.Common;
 
 namespace Wims.Models.Contracts
 {
-    interface IBug
+    public interface IBug : IWorkItem
     {
         IList<string> StepsToReproduce { get; }
         Priority Priority { get; }

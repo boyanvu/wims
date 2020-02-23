@@ -63,8 +63,8 @@ namespace Wims.Core.Providers
                 "sortallitemsbytitle" => new SortAllItemsCommand(parameters, workItemProvider),
                 "sortitemsbyrating" => new SortAllItemsByRatingCommand(parameters,workItemProvider),
                 "sortitemsbypriority" => new SortAllItemsByPriority(parameters, workItemProvider),
-                "sortbugsbyseverity" => new SortBugsBySeverityCommand(parameters, workItemProvider),
-                "sortstoriesbysize" => new SortStoriesBySizeCommand(parameters, workItemProvider),
+                "sortitemsbyseverity" => new SortBugsBySeverityCommand(parameters, workItemProvider),
+                "sortitemsbysize" => new SortStoriesBySizeCommand(parameters, workItemProvider),
 
                 _ => throw new InvalidOperationException("Command does not exist")
             };

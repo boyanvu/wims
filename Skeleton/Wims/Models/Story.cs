@@ -7,12 +7,12 @@ namespace Wims.Models.Common
 {
     public class Story : WorkItem, IStory, ICommon
     {
-        public Story(string title, string description, Priority priority, Size size, StatusStory status)
+        public Story(string title, string description, Priority priority, Size size)
             : base(title, description)
         {
             this.Priority = priority;
             this.Size = size;
-            this.Status = status;
+            this.Status = StatusStory.NotDone;
             this.Assignee = null;
         }
         public Priority Priority { get; set; }

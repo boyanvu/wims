@@ -29,7 +29,7 @@ namespace Wims.Core.Commands
             var description = this.CommandParameters[1];
             var priority = ValidateEnums.ValidatePriority(CommandParameters[2]);
             var size = ValidateEnums.ValidateStorySize(CommandParameters[3]);
-            var status = StatusStory.NotDone;
+            
 
             var currBoardItems = CurrentVariables.currentBoard.WorkItems;
 
@@ -40,7 +40,7 @@ namespace Wims.Core.Commands
 
             }
 
-            var newStory = this.Factory.CreateStory(title, description, priority, size, status);
+            var newStory = this.Factory.CreateStory(title, description, priority, size);
 
 
             CurrentVariables.AddToWIHistory(newStory);
