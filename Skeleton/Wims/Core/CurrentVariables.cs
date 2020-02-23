@@ -61,5 +61,29 @@ namespace Wims.Core
 
             return workItem;
         }
+
+        public static ITeam currTeamValid()
+        {
+            if (currentTeam == null)
+            {
+                var msg = $"No team currently selected." + Environment.NewLine +
+                          $"You can use one of following commands:" + Environment.NewLine +
+                          $"createteam <teamname>, selectteam <teamname>, listteams";
+                throw new Exception(msg);
+            }
+            return currentTeam;
+        }
+
+        public static IBoard currBoardValid()
+        {
+            if (currentBoard == null)
+            {
+                var msg = $"No board currently selected." + Environment.NewLine +
+                          $"You can use one of the following commands:" + Environment.NewLine +
+                          $"createboard <boardname>, selectboard <boardname>, listallboards";
+                throw new Exception(msg);
+            }
+            return currentBoard;
+        }
     }
 }
