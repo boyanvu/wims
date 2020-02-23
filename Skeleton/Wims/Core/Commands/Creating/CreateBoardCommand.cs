@@ -23,15 +23,7 @@ namespace Wims.Core.Commands
                 throw new ArgumentException("Parameters count is not valid!");
             }
 
-            var currTeam = CurrentVariables.currentTeam;
-
-            if (currTeam == null)
-            {
-                var msg = $"You have to select/create team before board creation." + Environment.NewLine +
-                          $"You can you use one of these commands:" + Environment.NewLine +
-                          $"createteam <teamname>, selectteam <teamname>, listteams";
-                throw new Exception(msg);
-            }
+            var currTeam = CurrentVariables.currTeamValid();
 
             var boardName = this.CommandParameters[0];
 
