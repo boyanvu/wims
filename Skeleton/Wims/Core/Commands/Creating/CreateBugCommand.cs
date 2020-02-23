@@ -30,7 +30,7 @@ namespace Wims.Core.Commands
             var severity = ValidateEnums.ValidateSeverity(CommandParameters[3]);
 
 
-            var currBoardItems = CurrentVariables.currentBoard.WorkItems;
+            var currBoardItems = CurrentVariables.currBoardValid().WorkItems;
 
             var findBug = this.WorkItemProvider.Find(title);
             if (findBug != null)
