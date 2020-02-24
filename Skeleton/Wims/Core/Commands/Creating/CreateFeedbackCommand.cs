@@ -44,7 +44,7 @@ namespace Wims.Core.Commands
             this.WorkItemProvider.Add(newFeedback);
             currBoardItems.Add(newFeedback);
 
-            return $"{newFeedback.Title} feedback added to {CurrentVariables.currentBoard.Name} board!";
+            return $"{newFeedback.Title} feedback added to {CurrentVariables.currentBoard.Name} board!" + CurrentVariables.CreateFeedbackText(); 
 
         }
 

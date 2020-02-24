@@ -45,7 +45,7 @@ namespace Wims.Core.Commands
             CurrentVariables.currentBoard = board;
             CurrentVariables.currentBoard.History.Add($"{boardName} board created!");
 
-            return $"Created Board {Environment.NewLine}{board.ToString()}";
+            return $"Created Board {Environment.NewLine}{board.ToString()}" + CurrentVariables.CreateBoardText();
         }
     }
 }

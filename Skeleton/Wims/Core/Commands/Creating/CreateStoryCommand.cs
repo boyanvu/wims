@@ -48,7 +48,7 @@ namespace Wims.Core.Commands
             this.WorkItemProvider.Add(newStory);
             currBoardItems.Add(newStory);
 
-            return $"{newStory.Title} story added to {CurrentVariables.currentBoard.Name} board!";
+            return $"{newStory.Title} story added to {CurrentVariables.currentBoard.Name} board!" + CurrentVariables.CreateStoryText(); 
 
         }
 

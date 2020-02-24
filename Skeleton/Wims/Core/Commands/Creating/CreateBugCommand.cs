@@ -46,7 +46,7 @@ namespace Wims.Core.Commands
             this.WorkItemProvider.Add(newBug);
             currBoardItems.Add(newBug);
 
-            return $"{newBug.Title} bug added to {CurrentVariables.currentBoard.Name} board!";
+            return $"{newBug.Title} bug added to {CurrentVariables.currentBoard.Name} board!" + CurrentVariables.CreateBugText();
 
         }
     }

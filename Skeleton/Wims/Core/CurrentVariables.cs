@@ -85,5 +85,45 @@ namespace Wims.Core
             }
             return currentBoard;
         }
+
+        public static string CreateBugText()
+        {
+            var msg = Environment.NewLine + "You can now add comment or steps to reproduce using the following commands:" + Environment.NewLine +
+                       "addstepstobug <bugTitle> <firststep> > <secondstep> .... || addcomment <workItemTitle> <memberName> <message>!" + Environment.NewLine +
+                       "You can also modify bug with modifybug <bugTitle> <status/severity/priority> <newValue>!";
+            return msg;
+        }
+
+
+        public static string CreateStoryText()
+        {
+            var msg = Environment.NewLine + "You can modify the story using the following commands:" + Environment.NewLine +
+                       "modifystory <storyTitle> <status/size/priority> <newValue>!";
+            return msg;
+        }
+
+        public static string CreateFeedbackText()
+        {
+            var msg = Environment.NewLine + "You can modify the feedback using the following commands:" + Environment.NewLine +
+                       "modifyfeedback <feedbackTitle> <rating/status> <newValue>!";
+            return msg;
+        }
+
+        public static string CreateTeamText()
+        {
+            var msg = Environment.NewLine + "You can now create a member or a board in the team using the following commands:" + Environment.NewLine +
+                       "createmember <memberName> || createboard <boardName>!";
+            return msg;
+        }
+
+        public static string CreateBoardText()
+        {
+            var msg = Environment.NewLine + "You can now create a workitem in the board using the following commands:" + Environment.NewLine +
+                       "createbug <bugTitle> <bugDescription> <bugPriority> <bugSeverity>!" + Environment.NewLine +
+                       "createstory <storyTitle> <storyDescription> <storyPriority> <storySize>!" + Environment.NewLine +
+                       "createfeedback <feedbackTitle> <feedbackDescription> <feedbackRating>";
+
+            return msg;
+        }
     }
 }

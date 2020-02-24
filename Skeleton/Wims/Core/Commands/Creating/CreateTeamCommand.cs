@@ -40,7 +40,7 @@ namespace Wims.Core.Abstracts
             CurrentVariables.currentTeam = team;
             CurrentVariables.currentBoard = null;
 
-            return $"Created Team{Environment.NewLine}{team.ToString()}";
+            return $"Created Team{Environment.NewLine}{team.ToString()}" + CurrentVariables.CreateTeamText();
         }
     }
 }
