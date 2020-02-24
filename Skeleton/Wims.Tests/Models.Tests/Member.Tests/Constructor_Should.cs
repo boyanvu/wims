@@ -2,11 +2,11 @@
 using System;
 using Wims.Models;
 
-namespace Wims.Tests.Models
+namespace Wims.Tests.Models.Tests
 
 {
     [TestClass]
-    public class TestMember
+    public class Member_Constructor_Should
     {
         [TestMethod]
         public void MemberConstructorCreateValid()
