@@ -35,7 +35,6 @@ namespace Wims.Core.Commands
                 }
             }
            
-
             return builder.ToString().TrimEnd();
         }
     }
