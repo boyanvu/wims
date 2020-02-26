@@ -1,10 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
-using System.Text;
-using Wims.Core.Contracts;
 using Wims.Models;
-using Wims.Models.Contracts;
 using Wims.Models.Common;
 using Wims.Core.Commands;
 using Wims.Core;
