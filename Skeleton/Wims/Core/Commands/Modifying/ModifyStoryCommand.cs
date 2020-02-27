@@ -42,6 +42,10 @@ namespace Wims.Core.Commands
             {
                 storyToModify.Status = ValidateEnums.ValidateStatusStory(this.CommandParameters[2]);
             }
+            else
+            {
+                throw new ArgumentException("Invalid parameter to modify." + Environment.NewLine + "You can modify priority, status or size.");
+            }
 
             return $"{storyToModify.Title} story's {this.CommandParameters[1]} was modified to {this.CommandParameters[2]} in {CurrentVariables.currentBoard.Name} board!";
         }
