@@ -17,8 +17,6 @@ namespace Wims.Core.Commands
 
         public override string Execute()
         {
-            //overrite parameters with step by step user input
-
             if (this.CommandParameters.Count != 3)
             {
                 throw new ArgumentException("Parameters count is not valid!");
@@ -38,8 +36,7 @@ namespace Wims.Core.Commands
 
             var newFeedback = this.Factory.CreateFeedback(title, description, rating);
 
-            Commons.AddToWIHistory(newFeedback);
-            Commons.AddToBoardHistory(Commons.currentBoard, newFeedback);
+            Commons.AddToWIHistory(newFeedback);        
             this.WorkItemProvider.Add(newFeedback);
             currBoardItems.Add(newFeedback);
 

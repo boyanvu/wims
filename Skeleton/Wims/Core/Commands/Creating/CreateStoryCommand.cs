@@ -43,7 +43,6 @@ namespace Wims.Core.Commands
 
 
             Commons.AddToWIHistory(newStory);
-            Commons.AddToBoardHistory(Commons.currentBoard, newStory);
             this.WorkItemProvider.Add(newStory);
             currBoardItems.Add(newStory);
 

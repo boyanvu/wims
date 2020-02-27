@@ -28,12 +28,14 @@ namespace Wims.Core
         }
 
         //Adds all item histories in their board history
-        public static void AddToBoardHistory(IBoard board, IWorkItem item)
+        public static string AddToBoardHistory(IBoard board)
         {
-            foreach (var itemHistory in item.History)
+            var builder = new StringBuilder();
+            foreach (var itemHistory in board.WorkItems)
             {
-                board.History.Add(itemHistory);
+                builder.AppendLine(string.Join(Environment.NewLine, itemHistory.History));
             }
+            return builder.ToString();
         }
 
         //Adds all boards and members history to their team history
@@ -82,6 +84,7 @@ namespace Wims.Core
             }
             return currentTeam;
         }
+
 
         //Returns the current board
         public static IBoard CurrBoardValid()

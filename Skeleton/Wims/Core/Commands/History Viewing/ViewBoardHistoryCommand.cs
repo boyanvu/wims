@@ -36,7 +36,7 @@ namespace Wims.Core.Commands
                 throw new Exception("Board with this name does not exist!");
             }
 
-            builder.AppendLine(string.Join(Environment.NewLine, findBoard.History));
+            builder.AppendLine(string.Join(Environment.NewLine, Commons.AddToBoardHistory(Commons.currentBoard)));
 
 
             return builder.ToString().TrimEnd();
