@@ -39,7 +39,7 @@ namespace Wims.Core.Commands
             }
 
             var memberName = this.CommandParameters[0];
-         
+
 
             var findMember = this.MemberProvider.Find(memberName);
 
