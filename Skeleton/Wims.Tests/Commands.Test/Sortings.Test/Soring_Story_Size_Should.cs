@@ -28,7 +28,7 @@ namespace Wims.Tests.Commands.Test.Sortings.Test
             var result = sut.Execute();
 
             //Assert
-            Assert.IsTrue(result.StartsWith($"Story:{Environment.NewLine}  Title: TitleStoryB"));
+            Assert.IsTrue(result.StartsWith($"Story:{Environment.NewLine}  ID: 2"));
 
 
         }

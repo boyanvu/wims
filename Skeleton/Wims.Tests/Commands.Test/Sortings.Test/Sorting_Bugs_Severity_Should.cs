@@ -41,7 +41,7 @@ namespace Wims.Tests.Commands.Tests.Sorting.Tests.SortBugsBySeverityCommandTests
             var result = sut.Execute();
 
             //Assert
-            Assert.IsTrue(result.StartsWith($"Bug:{Environment.NewLine}  Title: WindowsCrash"));
+            Assert.IsTrue(result.StartsWith($"Bug:{Environment.NewLine}  ID: 1"));
         }
     }
 

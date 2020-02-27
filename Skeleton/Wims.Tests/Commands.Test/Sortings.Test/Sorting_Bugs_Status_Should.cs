@@ -59,7 +59,7 @@ namespace Wims.Tests.Commands.Test.Sortings.Test
             var result = sut.Execute();
 
             //Assert
-            Assert.IsTrue(result.StartsWith($"Bug:{Environment.NewLine}  Title: WindowsCrash"));
+            Assert.IsTrue(result.StartsWith($"Bug:{Environment.NewLine}  ID: 1"));
 
         }
 
