@@ -1,0 +1,7 @@
+createteam Mandalorians
+createmember Boyan
+addmembertoteam Boyan
+createboard Trello
+createbug NewCrashBug CrashBugDescription high minor
+addcomment NewCrashBug Boyan Awful!
+listallitems

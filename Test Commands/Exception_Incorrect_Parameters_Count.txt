@@ -1,0 +1,5 @@
+createteam Mandalorians
+createboard Trello
+createmember Boyan
+createmember Radoslav
+addmembertoteam 

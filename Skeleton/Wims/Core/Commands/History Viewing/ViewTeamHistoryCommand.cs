@@ -8,13 +8,11 @@ namespace Wims.Core.Commands
 {
     public class ViewTeamHistoryCommand : Command
     {
-        public ViewTeamHistoryCommand(IList<string> commandLine, ITeamProvider teamProvider) :
+        public ViewTeamHistoryCommand(IList<string> commandLine) :
             base(commandLine)
         {
-            this.TeamProvider = teamProvider;
+           
         }
-
-        public ITeamProvider TeamProvider { get; }
 
 
         public override string Execute()

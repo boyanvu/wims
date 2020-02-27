@@ -1,0 +1,6 @@
+createteam Mandalorians
+createboard Trello
+createbug NewCrashBug CrashBugDescription high minor
+createstory CSharpStory CSharpStoryDescription high small
+modifybug NewCrashBug priority mediu
+modifystory CSharpStory status inprogres

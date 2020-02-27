@@ -1,0 +1,6 @@
+createteam Mandalorians
+createmember Yo
+createboard Tr
+createboard Trello
+createbug Crash CrashBugDescription high minor
+createstory CSharpStory CSharp high small

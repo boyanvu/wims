@@ -1,0 +1,9 @@
+createteam Mandalorians
+createboard Trello
+createmember Boian
+createmember Radoslav
+addmembertoteam Radoslav
+addmembertoteam Boian
+createbug NewCrashBug CrashBugDescription high minor
+createstory CSharpStory CSharpStoryDescription high small
+assign Pesho NewCrashBug

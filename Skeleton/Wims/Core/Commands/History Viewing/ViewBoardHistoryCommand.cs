@@ -11,33 +11,21 @@ namespace Wims.Core.Commands
         /// <summary>
         /// Prints the current board history.
         /// </summary>
-        /// <param name="commandLine">One parameter - the board name</param>
-        /// <param name="boardProvider">We use the list of all boards to find the one that we need</param>
-        public ViewBoardHistoryCommand(IList<string> commandLine, IBoardProvider boardProvider) :
+        /// <param name="commandLine"></param>
+        
+        public ViewBoardHistoryCommand(IList<string> commandLine) :
             base(commandLine)
         {
-            this.BoardProvider = boardProvider;
+          
         }
 
-        public IBoardProvider BoardProvider { get; }
-
-
+  
         public override string Execute()
         {
 
             var builder = new StringBuilder();
 
-            var boardName = this.CommandParameters[0];
-
-            var findBoard = this.BoardProvider.Find(boardName);
-
-            if (findBoard == null)
-            {
-                throw new Exception("Board with this name does not exist!");
-            }
-
             builder.AppendLine(string.Join(Environment.NewLine, Commons.AddToBoardHistory(Commons.currentBoard)));
-
 
             return builder.ToString().TrimEnd();
         }

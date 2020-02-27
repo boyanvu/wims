@@ -35,7 +35,7 @@ namespace Wims.Core
             {
                 builder.AppendLine(string.Join(Environment.NewLine, itemHistory.History));
             }
-            return builder.ToString();
+            return builder.ToString().TrimEnd();
         }
 
         //Adds all boards and members history to their team history
@@ -44,7 +44,7 @@ namespace Wims.Core
             var builder = new StringBuilder();
             foreach (var board in team.Boards)
             {
-                builder.AppendLine(string.Join(Environment.NewLine, board.History));
+                builder.AppendLine(string.Join(Environment.NewLine, AddToBoardHistory(board)));
             }
             foreach (var member in team.Members)
             {
