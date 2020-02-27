@@ -9,7 +9,7 @@ using Wims.Core;
 namespace Wims.Tests.Commands.Test.Assigning.Test
 {
     [TestClass]
-    public class Assigning_Should
+    public class Assigning_should
     {
         [TestMethod]
         public void Execute_Less_Params_ThrowEx()
@@ -29,15 +29,13 @@ namespace Wims.Tests.Commands.Test.Assigning.Test
             CurrentVariables.currentTeam = new Team("TeamName");
             CurrentVariables.currentBoard = new Board("BoardName");
             CurrentVariables.currentTeam.Boards.Add(CurrentVariables.currentBoard);
-            var fakeMemberName = "TestMemberName";
-            var fakeWiTitle = "WorkItemTitle";
-            var fakeMember = new Member(fakeMemberName);
+            var fakeMember = new Member("TestMemberName");
             var fakeCurrTeam = CurrentVariables.currentTeam;
             var fakeCurrBoard = CurrentVariables.currentBoard;
             fakeCurrTeam.Members.Add(fakeMember);
-            var listParams = new List<string>() { fakeMemberName, fakeWiTitle };
+            var listParams = new List<string>() { "TestMemberName", "WorkItemTitle" };
 
-            var workItem = new Bug(fakeWiTitle, "WorkItemDescription", Priority.High, Severity.Critical);
+            var workItem = new Bug("WorkItemTitle", "WorkItemDescription", Priority.High, Severity.Critical);
             fakeCurrBoard.WorkItems.Add(workItem);
 
             var sut = new AssignCommand(listParams);
@@ -56,20 +54,18 @@ namespace Wims.Tests.Commands.Test.Assigning.Test
             CurrentVariables.currentTeam = new Team("TeamName");
             CurrentVariables.currentBoard = new Board("BoardName");
             CurrentVariables.currentTeam.Boards.Add(CurrentVariables.currentBoard);
-            var fakeMemberName = "TestMemberName";
-            var fakeWiTitle = "WorkItemTitle";
             var fakeCurrTeam = CurrentVariables.currentTeam;
             var fakeCurrBoard = CurrentVariables.currentBoard;
 
-            var listParams = new List<string>() { fakeMemberName, fakeWiTitle };
+            var listParams = new List<string>() { "TestMemberName", "WorkItemTitle" };
 
-            var workItem = new Bug(fakeWiTitle, "WorkItemDescription", Priority.High, Severity.Critical);
+            var workItem = new Bug("WorkItemTitle", "WorkItemDescription", Priority.High, Severity.Critical);
             fakeCurrBoard.WorkItems.Add(workItem);
 
             var sut = new AssignCommand(listParams);
 
             //Act & Assert
-            Assert.ThrowsException<ArgumentException>(() => sut.Execute(), $"Member with name {fakeMemberName} does not exist in team {fakeCurrTeam.Name}.");
+            Assert.ThrowsException<ArgumentException>(() => sut.Execute(), $"Member with name TestMemberName does not exist in team {fakeCurrTeam.Name}.");
         }
 
         [TestMethod]
@@ -79,17 +75,16 @@ namespace Wims.Tests.Commands.Test.Assigning.Test
             CurrentVariables.currentTeam = new Team("TeamName");
             CurrentVariables.currentBoard = new Board("BoardName");
             CurrentVariables.currentTeam.Boards.Add(CurrentVariables.currentBoard);
-            var fakeMemberName = "TestMemberName";
-            var fakeWiTitle = "WorkItemTitle";
+
             var fakeCurrTeam = CurrentVariables.currentTeam;
             var fakeCurrBoard = CurrentVariables.currentBoard;
 
-            var listParams = new List<string>() { fakeMemberName, fakeWiTitle };
+            var listParams = new List<string>() { "TestMemberName", "WorkItemTitle" };
 
             var sut = new AssignCommand(listParams);
 
             //Act & Assert
-            Assert.ThrowsException<ArgumentException>(() => sut.Execute(), $"Work item with title {fakeWiTitle} does not exist in board {fakeCurrBoard.Name}.");
+            Assert.ThrowsException<ArgumentException>(() => sut.Execute(), $"Work item with title WorkItemTitle does not exist in board {fakeCurrBoard.Name}.");
         }
 
         [TestMethod]
@@ -99,21 +94,19 @@ namespace Wims.Tests.Commands.Test.Assigning.Test
             CurrentVariables.currentTeam = new Team("TeamName");
             CurrentVariables.currentBoard = new Board("BoardName");
             CurrentVariables.currentTeam.Boards.Add(CurrentVariables.currentBoard);
-            var fakeMemberName = "TestMemberName";
-            var fakeWiTitle = "WorkItemTitle";
-            var fakeMember = new Member(fakeMemberName);
+            var fakeMember = new Member("TestMemberName");
             var fakeCurrTeam = CurrentVariables.currentTeam;
             var fakeCurrBoard = CurrentVariables.currentBoard;
             fakeCurrTeam.Members.Add(fakeMember);
-            var listParams = new List<string>() { fakeMemberName, fakeWiTitle };
+            var listParams = new List<string>() { "TestMemberName", "WorkItemTitle" };
 
-            var workItem = new Feedback(fakeWiTitle, "WorkItemDescription", 3);
+            var workItem = new Feedback("WorkItemTitle", "WorkItemDescription", 3);
             fakeCurrBoard.WorkItems.Add(workItem);
 
             var sut = new AssignCommand(listParams);
 
             //Act & Assert
-            Assert.ThrowsException<ArgumentException>(() => sut.Execute(), $"Work item {fakeWiTitle} is of type feedback and it is not supposed to have assignee.");
+            Assert.ThrowsException<ArgumentException>(() => sut.Execute(), $"Work item WorkItemTitle is of type feedback and it is not supposed to have assignee.");
         }
     }
 }
