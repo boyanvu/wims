@@ -5,6 +5,10 @@ using Wims.Core.Contracts;
 
 namespace Wims.Core.Commands.Creating
 {
+    /// <summary>
+    /// Add specific member to the list of members in the current team
+    /// </summary>
+    /// <param name="commandLine">Accepts one parameters - the member name</param>
     public class AddMemberToTeamCommand : Command
     {
         public AddMemberToTeamCommand(IList<string> commandLine, IMemberProvider memberProvider)
@@ -33,8 +37,6 @@ namespace Wims.Core.Commands.Creating
             var memberName = this.CommandParameters[0];
 
             var findMember = this.MemberProvider.Find(memberName);
-
-
 
             findMember.History.Add($"{findMember.Name} {findMember.GetType().Name} was added to team {currentTeam.Name}!");
             currentTeam.Members.Add(findMember);

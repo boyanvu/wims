@@ -8,6 +8,12 @@ namespace Wims.Core.Commands
 {
     public class CreateStoryCommand : Command
     {
+        /// <summary>
+        /// Creates a story in the the current team and the current board.
+        /// </summary>
+        /// <param name="commandLine">Accepts 4 parameters - story title, story description, priortity and size</param>
+        /// <param name="workItemProvider">Adds the created story to the list of all work items created in the program.
+        /// We also add to the team, board and work item history.</param>
         public CreateStoryCommand(IList<string> commandLine, IWorkItemProvider workItemProvider)
             : base(commandLine)
         {

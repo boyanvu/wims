@@ -7,6 +7,12 @@ namespace Wims.Core.Commands
 {
     public class CreateFeedbackCommand : Command
     {
+        /// <summary>
+        /// Creates a feedback in the the current team and the current board.
+        /// </summary>
+        /// <param name="commandLine">Accepts 3 parameters - feedback title, feedback description and rating</param>
+        /// <param name="workItemProvider">Adds the created feedback to the list of all work items created in the program.
+        /// We also add to the team, board and work item history.</param>
         public CreateFeedbackCommand(IList<string> commandLine, IWorkItemProvider workItemProvider)
             : base(commandLine)
         {

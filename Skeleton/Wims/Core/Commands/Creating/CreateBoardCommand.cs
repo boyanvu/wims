@@ -5,6 +5,10 @@ using Wims.Core.Contracts;
 
 namespace Wims.Core.Commands
 {
+    /// <summary>
+    /// Creates new board and add it to the current team
+    /// </summary>
+    /// <param name="commandLine">Accepts one parameter - the board name</param>
     public class CreateBoardCommand : Command
     {
         public CreateBoardCommand(IList<string> commandLine, IBoardProvider boardProvider)
