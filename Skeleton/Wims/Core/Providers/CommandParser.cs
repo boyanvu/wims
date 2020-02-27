@@ -67,6 +67,7 @@ namespace Wims.Core.Providers
                 "sortitemsbyseverity" => new SortBugsBySeverityCommand(parameters, workItemProvider),
                 "sortitemsbysize" => new SortStoriesBySizeCommand(parameters, workItemProvider),
                 "addmembertoteam" => new AddMemberToTeamCommand(parameters, memberProvider),
+                "help" => new HelpCommand(parameters),
 
                 _ => throw new InvalidOperationException("Command does not exist")
             };
