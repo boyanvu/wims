@@ -1,0 +1,7 @@
+createteam Mandalorians
+createboard Telerik
+createteam ThunderDucks
+createboard Trello
+selectteam Mandalorians
+selectboard Telerik
+selectboard Trello
