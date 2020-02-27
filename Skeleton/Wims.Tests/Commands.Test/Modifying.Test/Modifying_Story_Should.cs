@@ -59,22 +59,39 @@ namespace Wims.Tests.Commands.Test.Modifying.Test
             Assert.AreEqual(result, "CreatedNewStory story's size was modified to medium in Trello board!");
         }
 
-
-        class FakeWorkItemProvider : IWorkItemProvider
+        [TestMethod]
+        public void ModifyStory_InvalidPropertyToModify_ThrowEx()
         {
-            private readonly List<IWorkItem> workItems = new List<IWorkItem>();
-            public IReadOnlyList<IWorkItem> WorkItems => workItems;
+            //Arrange
+            var fakeProvider = new FakeWorkItemProvider();
+            var board = new Board("Trello");
+            var story = new Story("CreatedNewStory", "CSDescription", Priority.High, Size.Large);
+            var listParams = new List<string>() { "CreatedNewStory", "BlaBla", "medium" };
+            CurrentVariables.currentBoard = board;
+            var currBoardItems = CurrentVariables.currentBoard.WorkItems;
+            currBoardItems.Add(story);
+            var sut = new ModifyStoryCommand(listParams, fakeProvider);
 
-            public void Add(IWorkItem item)
-            {
-                workItems.Add(item);
-            }
-
-            public IWorkItem Find(string title)
-            {
-                var wi = workItems.FirstOrDefault(m => m.Title == title);
-                return wi;
-            }
+            //Act & Assert
+            Assert.ThrowsException<ArgumentException>(()=>sut.Execute(), "Invalid parameter to modify." + Environment.NewLine + "You can modify priority, status or size.");
         }
+
+        //throw new ArgumentException("Invalid parameter to modify." + Environment.NewLine + "You can modify priority, status or size.");
+        //class FakeWorkItemProvider : IWorkItemProvider
+        //{
+        //    private readonly List<IWorkItem> workItems = new List<IWorkItem>();
+        //    public IReadOnlyList<IWorkItem> WorkItems => workItems;
+
+        //    public void Add(IWorkItem item)
+        //    {
+        //        workItems.Add(item);
+        //    }
+
+        //    public IWorkItem Find(string title)
+        //    {
+        //        var wi = workItems.FirstOrDefault(m => m.Title == title);
+        //        return wi;
+        //    }
+        //}
     }
 }
