@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using Wims.Core.Commands.Abstracts;
 using Wims.Core.Contracts;
 using Wims.Core.Providers;
-using Wims.Models.Common;
 
 namespace Wims.Core.Commands
 {
@@ -29,7 +28,7 @@ namespace Wims.Core.Commands
             var description = this.CommandParameters[1];
             var priority = ValidateEnums.ValidatePriority(CommandParameters[2]);
             var size = ValidateEnums.ValidateStorySize(CommandParameters[3]);
-            
+
 
             var currBoardItems = CurrentVariables.currBoardValid().WorkItems;
 
@@ -48,7 +47,7 @@ namespace Wims.Core.Commands
             this.WorkItemProvider.Add(newStory);
             currBoardItems.Add(newStory);
 
-            return $"{newStory.Title} story added to {CurrentVariables.currentBoard.Name} board!" + CurrentVariables.CreateStoryText(); 
+            return $"{newStory.Title} story added to {CurrentVariables.currentBoard.Name} board!" + CurrentVariables.CreateStoryText();
 
         }
 

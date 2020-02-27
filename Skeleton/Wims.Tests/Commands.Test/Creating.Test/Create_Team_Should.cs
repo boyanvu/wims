@@ -1,12 +1,8 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using Wims.Core;
 using Wims.Core.Abstracts;
-using Wims.Core.Contracts;
-using Wims.Models.Contracts;
 
 namespace Wims.Tests.Commands.Test.Creating.Test
 {

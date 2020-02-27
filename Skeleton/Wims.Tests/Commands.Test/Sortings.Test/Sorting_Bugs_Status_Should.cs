@@ -1,12 +1,9 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
-using System.Text;
 using Wims.Core.Commands;
-using Wims.Core.Contracts;
 using Wims.Models;
 using Wims.Models.Common;
-using Wims.Models.Contracts;
 
 namespace Wims.Tests.Commands.Test.Sortings.Test
 {

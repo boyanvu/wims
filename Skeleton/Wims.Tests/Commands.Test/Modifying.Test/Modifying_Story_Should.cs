@@ -1,13 +1,10 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using Wims.Core;
 using Wims.Core.Commands;
-using Wims.Core.Contracts;
 using Wims.Models;
 using Wims.Models.Common;
-using Wims.Models.Contracts;
 
 namespace Wims.Tests.Commands.Test.Modifying.Test
 {

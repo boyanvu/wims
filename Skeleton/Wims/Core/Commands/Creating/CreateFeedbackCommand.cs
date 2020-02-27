@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using Wims.Core.Commands.Abstracts;
 using Wims.Core.Contracts;
-using Wims.Models.Common;
 
 namespace Wims.Core.Commands
 {
@@ -44,7 +43,7 @@ namespace Wims.Core.Commands
             this.WorkItemProvider.Add(newFeedback);
             currBoardItems.Add(newFeedback);
 
-            return $"{newFeedback.Title} feedback added to {CurrentVariables.currentBoard.Name} board!" + CurrentVariables.CreateFeedbackText(); 
+            return $"{newFeedback.Title} feedback added to {CurrentVariables.currentBoard.Name} board!" + CurrentVariables.CreateFeedbackText();
 
         }
 

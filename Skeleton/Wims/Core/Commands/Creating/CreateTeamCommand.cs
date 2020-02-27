@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using Wims.Core.Commands.Abstracts;
 using Wims.Core.Contracts;
 
@@ -28,11 +27,11 @@ namespace Wims.Core.Abstracts
             }
 
             var teamName = this.CommandParameters[0];
-           
+
             var findTeam = this.TeamProvider.Find(teamName);
-            if(findTeam != null)
+            if (findTeam != null)
             {
-                throw new ArgumentException($"Team {teamName} already exists." 
+                throw new ArgumentException($"Team {teamName} already exists."
                     + Environment.NewLine + "You could see all teams with command listteams.");
             }
 

@@ -2,9 +2,7 @@
 using System;
 using System.Collections.Generic;
 using Wims.Core.Commands;
-using Wims.Core.Contracts;
 using Wims.Models;
-using Wims.Models.Contracts;
 using Wims.Models.Common;
 using Wims.Tests.Commands.Test;
 
