@@ -1,0 +1,2 @@
+createteam Mandalorians
+createboard Trello

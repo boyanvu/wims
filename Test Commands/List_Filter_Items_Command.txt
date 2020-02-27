@@ -1,0 +1,9 @@
+createteam Mandalorians
+createboard Trello
+createbug NewCrashBug CrashBugDescription high minor
+createfeedback BugFeedback BugFeedbackDescription 5 
+createbug NewFreezeBug FreezeBugDescription medium major
+createstory CSharpStory CSharpStoryDescription high small
+createfeedback PeerFeedback PeerFeedbackDescription 8
+listfilterallitems bug
+listfilterallitems feedback

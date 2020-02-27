@@ -1,0 +1,6 @@
+createteam Mandalorians
+createboard Trello
+createstory CSharpStory CSharpStoryDescription high small
+listallitems
+modifystory CSharpStory size medium
+listallitems

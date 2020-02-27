@@ -1,0 +1,6 @@
+createteam Mandalorians
+createboard Trello
+createbug NewCrashBug CrashBugDescription high minor
+listallitems
+modifybug NewCrashBug priority medium
+listallitems

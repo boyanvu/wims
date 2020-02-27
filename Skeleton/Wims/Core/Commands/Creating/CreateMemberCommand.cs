@@ -29,16 +29,7 @@ namespace Wims.Core.Commands
                 throw new ArgumentException("Parameters count is not valid!");
             }
 
-            var currentTeam = Commons.currentTeam;
-            if (currentTeam == null)
-            {
-                throw new Exception($"You have to select/create team before member creation." + Environment.NewLine +
-                          $"You can you use one of these commands:" + Environment.NewLine +
-                          $"createteam <teamname>, selectteam <teamname>, listteams");
-            }
-
             var memberName = this.CommandParameters[0];
-
 
             var findMember = this.MemberProvider.Find(memberName);
 
@@ -51,11 +42,10 @@ namespace Wims.Core.Commands
             this.CommandParameters[0]);
 
 
-            member.History.Add($"{member.Name} {member.GetType().Name} was created in {currentTeam.Name} team!");
-            this.MemberProvider.Add(member);
-            currentTeam.Members.Add(member);
+            member.History.Add($"{member.Name} {member.GetType().Name} was created!");
+            this.MemberProvider.Add(member);        
 
-            return $"{member.Name} added to {currentTeam.Name}!";
+            return $"{member.Name} {member.GetType().Name} created!";
         }
     }
 }
