@@ -11,6 +11,11 @@ namespace Wims.Core.Commands
 {
     public class FilterAllFeedbacksByStatusCommand : Command
     {
+        /// <summary>
+        /// Prints all feedbacks with specific status
+        /// </summary>
+        /// <param name="commandLine">feedback status to filter by </param>
+        /// <param name="workItemProvider">list of the work items</param>
         public FilterAllFeedbacksByStatusCommand(IList<string> commandLine, IWorkItemProvider workItemProvider) :
             base(commandLine)
         {

@@ -10,6 +10,12 @@ namespace Wims.Core.Commands
 {
     public class FilterAllStoriesByAssigneeCommand : Command
     {
+        /// <summary>
+        /// Prints all stories where specific member is assigned
+        /// </summary>
+        /// <param name="commandLine">the name of the member</param>
+        /// <param name="workItemProvider">list of the work items</param>
+        /// <param name="memberProvider">list of the members</param>
         public FilterAllStoriesByAssigneeCommand(IList<string> commandLine, IWorkItemProvider workItemProvider, IMemberProvider memberProvider)
             : base(commandLine)
         {

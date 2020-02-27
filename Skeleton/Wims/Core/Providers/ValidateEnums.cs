@@ -5,6 +5,11 @@ namespace Wims.Core.Providers
 {
     public static class ValidateEnums
     {
+    /// <summary>
+    /// Here user input for enums is converted from string to enum. If the string is not valid exception is thrown.
+    /// </summary>
+    /// <param name="priority">string that should be within one of the bellow enums</param>
+    /// <returns></returns>
         public static Priority ValidatePriority(string priority)
         {
             switch (priority.ToLower())

@@ -11,6 +11,11 @@ namespace Wims.Core.Commands
 {
     public class FilterAllStoriesByStatusCommand : Command
     {
+        /// <summary>
+        /// Prints all stories with specific status
+        /// </summary>
+        /// <param name="commandLine">storie status to filter by </param>
+        /// <param name="workItemProvider">list of the work items</param>
         public FilterAllStoriesByStatusCommand(IList<string> commandLine, IWorkItemProvider workItemProvider) :
             base(commandLine)
         {

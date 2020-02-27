@@ -21,7 +21,6 @@ namespace Wims.Core.Providers
             workItems.Add(item);
         }
 
-
         public IWorkItem Find(string title)
         {
             var wi = workItems.FirstOrDefault(m => m.Title == title);

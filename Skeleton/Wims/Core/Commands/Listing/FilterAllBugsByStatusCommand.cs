@@ -11,6 +11,11 @@ namespace Wims.Core.Commands
 {
     public class FilterAllBugsByStatusCommand : Command
     {
+        /// <summary>
+        /// Prints all bugs with specific status
+        /// </summary>
+        /// <param name="commandLine">bug status to filter by </param>
+        /// <param name="workItemProvider">list of the work items</param>
         public FilterAllBugsByStatusCommand(IList<string> commandLine, IWorkItemProvider workItemProvider) :
             base(commandLine)
         {
