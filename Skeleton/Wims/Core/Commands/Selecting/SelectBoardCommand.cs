@@ -7,6 +7,10 @@ namespace Wims.Core.Commands
 {
     public class SelectBoardCommand : Command
     {
+        /// <summary>
+        /// Current board is set with this command
+        /// </summary>
+        /// <param name="commandLine">One parameter - name of the board that should be set as current</param>
         public SelectBoardCommand(IList<string> commandLine)
             : base(commandLine)
         {

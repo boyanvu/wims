@@ -8,6 +8,11 @@ namespace Wims.Core.Commands
 {
     public class ListAllItemsCommand : Command
     {
+        /// <summary>
+        /// Prints all available work items(bugs, stories and feedbacks)
+        /// </summary>
+        /// <param name="commandLine"></param>
+        /// <param name="workItemProvider">list of work items</param>
         public ListAllItemsCommand(IList<string> commandLine, IWorkItemProvider workItemProvider) :
             base(commandLine)
         {
