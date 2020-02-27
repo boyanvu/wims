@@ -1,5 +1,4 @@
 ﻿using System;
-using Wims.Core.Contracts;
 using Wims.Models.Contracts;
 using Wims.Models.WorkItems.Contracts;
 

@@ -3,7 +3,6 @@ using System;
 using System.Linq;
 using Wims.Core.Abstracts;
 using Wims.Core.Commands;
-using Wims.Core.Providers.Wims.Core.Providers;
 using Wims.Core.Commands.Modifying;
 using Wims.Core.Commands.Sorting;
 using Wims.Core.Commands.Creating;

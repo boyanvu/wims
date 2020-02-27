@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using Wims.Core.Commands.Abstracts;
-using Wims.Core.Contracts;
 
 namespace Wims.Core.Commands
 {

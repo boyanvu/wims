@@ -1,5 +1,4 @@
 ﻿using OlympicGames.Core;
-using Wims.Core;
 
 namespace Wims
 {

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Text;
 using Wims.Core.Commands.Abstracts;
-using Wims.Core.Contracts;
 
 namespace Wims.Core.Commands
 {

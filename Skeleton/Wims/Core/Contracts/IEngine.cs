@@ -1,8 +1,4 @@
-﻿using System.Collections.Generic;
-using Wims.Models.Contracts;
-
-
-    public interface IEngine
+﻿public interface IEngine
     {
         void Run();
     }

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Wims.Models.Common;
+﻿using System.Collections.Generic;
 
 namespace Wims.Models.Contracts
 {

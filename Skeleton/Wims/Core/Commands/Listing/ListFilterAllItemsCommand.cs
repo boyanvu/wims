@@ -4,7 +4,6 @@ using System.Text;
 using Wims.Core.Commands.Abstracts;
 using Wims.Core.Contracts;
 using System.Linq;
-using Wims.Models;
 
 namespace Wims.Core.Commands
 {

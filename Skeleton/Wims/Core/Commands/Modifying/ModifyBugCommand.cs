@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using Wims.Core.Commands.Abstracts;
 using Wims.Core.Contracts;
 using Wims.Core.Providers;
 using Wims.Models;
-using Wims.Models.Common;
 
 namespace Wims.Core.Commands
 {
