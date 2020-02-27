@@ -8,6 +8,13 @@ namespace Wims.Core.Commands
 {
     public class CreateMemberCommand : Command
     {
+
+        /// <summary>
+        /// Creates a new member by a given name
+        /// </summary>
+        /// <param name="commandLine"> In the command line we accept one parameter which is the name of the member</param>
+        /// <param name="memberProvider"> The list in which we will add the member where all created members are kept
+        /// and adds him to the members to the current team selected.</param>
         public CreateMemberCommand(IList<string> commandLine, IMemberProvider memberProvider)
             : base(commandLine)
         {

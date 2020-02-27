@@ -9,6 +9,12 @@ namespace Wims.Core.Commands
 {
     public class SelectTeamCommand : Command
     {
+
+        /// <summary>
+        /// Selects a team with which we are going to work with.
+        /// </summary>
+        /// <param name="commandLine">One parameter - the name of the team</param>
+        /// <param name="teamProvider">The list of all teams where we are going to search for this team.</param>
         public SelectTeamCommand(IList<string> commandLine, ITeamProvider teamProvider)
             : base(commandLine)
         {

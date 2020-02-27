@@ -8,6 +8,11 @@ namespace Wims.Core.Commands
 {
     public class AssignCommand : Command
     {
+        /// <summary>
+        /// Assigning a work item to a member
+        /// </summary>
+        /// <param name="commandLine">Accepts two parameters - the member name and the work item title with which
+        /// we find the given member and assign him the given work item.</param>
         public AssignCommand(IList<string> commandLine)
             : base(commandLine)
         {

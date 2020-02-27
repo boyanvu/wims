@@ -10,6 +10,12 @@ namespace Wims.Core.Commands
 {
     public class SortBugsBySeverityCommand : Command
     {
+
+        /// <summary>
+        /// Prints all bugs ordered by severity
+        /// </summary>
+        /// <param name="commandLine"></param>
+        /// <param name="workItemProvider">Search in the full list of work items, all which are bugs.</param>
         public SortBugsBySeverityCommand(IList<string> commandLine, IWorkItemProvider workItemProvider) :
             base(commandLine)
         {

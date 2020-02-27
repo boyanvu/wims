@@ -8,6 +8,11 @@ namespace Wims.Core.Abstracts
 {
     public class CreateTeamCommand : Command
     {
+        /// <summary>
+        /// Creates a new team by a given name
+        /// </summary>
+        /// <param name="commandLine"> Accepts one parameter which is the name of the team</param>
+        /// <param name="teamProvider"> The list in which we will add the team where all created teams are kept</param>
         public CreateTeamCommand(IList<string> commandLine, ITeamProvider teamProvider)
             : base(commandLine)
         {

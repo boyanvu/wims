@@ -8,6 +8,11 @@ namespace Wims.Core.Commands
 {
     public class ViewBoardHistoryCommand : Command
     {
+        /// <summary>
+        /// Prints the current board history.
+        /// </summary>
+        /// <param name="commandLine">One parameter - the board name</param>
+        /// <param name="boardProvider">We use the list of all boards to find the one that we need</param>
         public ViewBoardHistoryCommand(IList<string> commandLine, IBoardProvider boardProvider) :
             base(commandLine)
         {

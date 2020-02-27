@@ -8,6 +8,11 @@ namespace Wims.Core.Commands
 {
     public class UnassignCommand : Command
     {
+
+        /// <summary>
+        /// Unassigning a work item to a member
+        /// </summary>
+        /// <param name="commandLine">Accepts one parameter - the member name and the work item title with which </param>
         public UnassignCommand(IList<string> commandLine)
             : base(commandLine)
         {

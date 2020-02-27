@@ -10,6 +10,13 @@ namespace Wims.Core.Commands
 {
     public class CreateBugCommand : Command
     {
+
+        /// <summary>
+        /// Creates a bug in the the current team and the current board.
+        /// </summary>
+        /// <param name="commandLine">Accepts 4 parameters - bug title, bug description, priortity and severity</param>
+        /// <param name="workItemProvider">Adds the created bug to the list of all work items created in the program.
+        /// We also add to the team, board and work item history.</param>
         public CreateBugCommand(IList<string> commandLine, IWorkItemProvider workItemProvider)
             : base(commandLine)
         {

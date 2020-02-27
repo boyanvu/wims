@@ -49,6 +49,8 @@ namespace Wims.Core.Commands
                 throw new ArgumentException("Invalid parameter to modify." + Environment.NewLine + "You can modify priority, status or severity.");
             }
 
+
+            bugToModify.History.Add($"{bugToModify.Title}'s {this.CommandParameters[0]} was modified to {this.CommandParameters[1]}");
             return $"{bugToModify.Title} bug's {this.CommandParameters[1]} was modified to {this.CommandParameters[2]} in {CurrentVariables.currentBoard.Name} board!";
         }
     }

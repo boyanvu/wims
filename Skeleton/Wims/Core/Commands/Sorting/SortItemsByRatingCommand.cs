@@ -10,6 +10,11 @@ namespace Wims.Core.Commands
 {
     public class SortAllItemsByRatingCommand : Command
     {
+        /// <summary>
+        /// Prints all feedbacks sorted by rating.
+        /// </summary>
+        /// <param name="commandLine"></param>
+        /// <param name="workItemProvider">Search in the full list of work items, all which are feedbacks.</param>
         public SortAllItemsByRatingCommand(IList<string> commandLine, IWorkItemProvider workItemProvider) :
             base(commandLine)
         {
