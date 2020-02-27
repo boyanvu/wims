@@ -4,6 +4,8 @@
 	{
 		public const string helpCommands =
 @"
+		List of commands:
+		-----------------
 Create	
 	createteam...................(<teamName>)
 	createboard..................(<boardName>)
@@ -67,9 +69,6 @@ Help
 @"=========================================
 	WELCOME TO WORK MANAGEMENT SYSTEM
 =========================================
-
-		List of commands:
-		-----------------
 ";
 	}
 }
