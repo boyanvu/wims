@@ -1,4 +1,5 @@
 ﻿using System;
+using Wims;
 using Wims.Core;
 using Wims.Core.Contracts;
 using Wims.Core.Providers;
@@ -22,6 +23,8 @@ namespace OlympicGames.Core
 
         public void Run()
         {
+            //Splashscreen
+            Console.WriteLine(Help.initialMessage + Help.helpCommands);
             while (true)
             {
                 // Read -> Process -> Print -> Repeat
