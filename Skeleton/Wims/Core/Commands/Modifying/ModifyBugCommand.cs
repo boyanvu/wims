@@ -44,6 +44,10 @@ namespace Wims.Core.Commands
             {
                 bugToModify.Status = ValidateEnums.ValidateStatusBug(this.CommandParameters[2]);
             }
+            else
+            {
+                throw new ArgumentException("Invalid parameter to modify." + Environment.NewLine + "You can modify priority, status or severity.");
+            }
 
             return $"{bugToModify.Title} bug's {this.CommandParameters[1]} was modified to {this.CommandParameters[2]} in {CurrentVariables.currentBoard.Name} board!";
         }
