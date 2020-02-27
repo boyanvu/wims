@@ -27,10 +27,10 @@ namespace Wims.Core.Commands
 
             var workItemTitle = this.CommandParameters[0];
 
-            var currBoardItems = CurrentVariables.currentBoard.WorkItems;
+            var currBoardItems = Commons.currentBoard.WorkItems;
 
             var workItem = currBoardItems.FirstOrDefault(wi => wi.Title == workItemTitle) ??
-                throw new ArgumentException($"Work item with title {workItemTitle} does not exist in board {CurrentVariables.currentBoard.Name}.");
+                throw new ArgumentException($"Work item with title {workItemTitle} does not exist in board {Commons.currentBoard.Name}.");
 
             var wi = workItem as ICommon;
 
@@ -46,7 +46,7 @@ namespace Wims.Core.Commands
             wi.Assignee = null;
 
             workItem.History.Add($"{workItem.Title} {workItem.GetType().Name.ToLower()} has been unassigned from {currAssignee}");
-            CurrentVariables.currentBoard.History.Add($"{workItem.Title} {workItem.GetType().Name.ToLower()} has been assigned to {currAssignee}");
+            Commons.currentBoard.History.Add($"{workItem.Title} {workItem.GetType().Name.ToLower()} has been assigned to {currAssignee}");
 
 
             return $"{currAssignee} has been unassigned from {workItemTitle}";

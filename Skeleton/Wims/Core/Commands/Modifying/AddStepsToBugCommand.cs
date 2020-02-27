@@ -22,7 +22,7 @@ namespace Wims.Core.Commands.Modifying
             var titleOfBug = this.CommandParameters[0];
             var toBeSet = string.Join(" ", this.CommandParameters.Skip(1)).Split(">").ToList();
 
-            var bugToModify = CurrentVariables.GetWorkItem(titleOfBug, "Bug") as Bug;
+            var bugToModify = Commons.GetWorkItem(titleOfBug, "Bug") as Bug;
 
             bugToModify.StepsToReproduce = toBeSet;
 

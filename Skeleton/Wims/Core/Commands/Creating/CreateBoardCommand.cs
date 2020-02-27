@@ -22,7 +22,7 @@ namespace Wims.Core.Commands
                 throw new ArgumentException("Parameters count is not valid!");
             }
 
-            var currTeam = CurrentVariables.currTeamValid();
+            var currTeam = Commons.CurrTeamValid();
 
             var boardName = this.CommandParameters[0];
 
@@ -41,10 +41,10 @@ namespace Wims.Core.Commands
             this.BoardProvider.Add(board);
             currTeam.Boards.Add(board);
 
-            CurrentVariables.currentBoard = board;
-            CurrentVariables.currentBoard.History.Add($"{boardName} board created!");
+            Commons.currentBoard = board;
+            Commons.currentBoard.History.Add($"{boardName} board created!");
 
-            return $"Created Board {Environment.NewLine}{board.ToString()}" + CurrentVariables.CreateBoardText();
+            return $"Created Board {Environment.NewLine}{board.ToString()}" + Commons.CreateBoardText();
         }
     }
 }

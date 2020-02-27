@@ -40,14 +40,14 @@ namespace Wims.Tests.Commands.Test.Creating.Test
             var fakeProvider = new FakeWorkItemProvider();
             var board = new Board("Trello");
             var listParams = new List<string>() { "CreatedNewStory", "CSDescription", "high", "large" };
-            CurrentVariables.currentBoard = board;
+            Commons.currentBoard = board;
             var sut = new CreateStoryCommand(listParams, fakeProvider);
 
             //Act
             var result = sut.Execute();
 
             //Assert
-            Assert.AreEqual(result, $"CreatedNewStory story added to Trello board!" + CurrentVariables.CreateStoryText());
+            Assert.AreEqual(result, $"CreatedNewStory story added to Trello board!" + Commons.CreateStoryText());
         }
 
 

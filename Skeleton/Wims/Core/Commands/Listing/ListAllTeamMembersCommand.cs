@@ -21,7 +21,7 @@ namespace Wims.Core.Commands
         {
 
             var builder = new StringBuilder();
-            var members = CurrentVariables.currentTeam.Members;
+            var members = Commons.currentTeam.Members;
 
             if (members.Count == 0)
             {

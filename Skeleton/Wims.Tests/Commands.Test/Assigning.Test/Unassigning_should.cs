@@ -29,8 +29,8 @@ namespace Wims.Tests.Commands.Test.Assigning.Test
             //var team = new Team("Ducks");
             var board = new Board("Trello");
             //CurrentVariables.currentTeam = team;
-            CurrentVariables.currentBoard = board;
-            var currBoardItems = CurrentVariables.currentBoard;
+            Commons.currentBoard = board;
+            var currBoardItems = Commons.currentBoard;
             var story = new Story("NewCreatedStory", "NewCreateBugStoryDescr", Priority.Low, Size.Large);
             var member = new Member("Pesho");
             story.Assignee = member;

@@ -41,10 +41,10 @@ namespace Wims.Core.Abstracts
 
             this.TeamProvider.Add(team);
 
-            CurrentVariables.currentTeam = team;
-            CurrentVariables.currentBoard = null;
+            Commons.currentTeam = team;
+            Commons.currentBoard = null;
 
-            return $"Created Team{Environment.NewLine}{team.ToString()}" + CurrentVariables.CreateTeamText();
+            return $"Created Team{Environment.NewLine}{team.ToString()}" + Commons.CreateTeamText();
         }
     }
 }

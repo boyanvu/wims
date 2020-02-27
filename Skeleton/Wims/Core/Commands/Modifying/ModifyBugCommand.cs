@@ -27,7 +27,7 @@ namespace Wims.Core.Commands
                 throw new ArgumentException("Parameters count is not valid!");
             }
 
-            var currBoardItems = CurrentVariables.currentBoard.WorkItems;
+            var currBoardItems = Commons.currentBoard.WorkItems;
             var teamBugs = currBoardItems.Where(b => b.GetType().Name == "Bug");
             var bugToModify = teamBugs.FirstOrDefault(b => b.Title == this.CommandParameters[0]) as Bug;
 
@@ -51,7 +51,7 @@ namespace Wims.Core.Commands
 
 
             bugToModify.History.Add($"{bugToModify.Title}'s {this.CommandParameters[1]} was modified to {this.CommandParameters[2]}");
-            return $"{bugToModify.Title} bug's {this.CommandParameters[1]} was modified to {this.CommandParameters[2]} in {CurrentVariables.currentBoard.Name} board!";
+            return $"{bugToModify.Title} bug's {this.CommandParameters[1]} was modified to {this.CommandParameters[2]} in {Commons.currentBoard.Name} board!";
         }
     }
 }

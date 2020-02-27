@@ -62,7 +62,7 @@ namespace OlympicGames.Core
         private void Print(string msg)
         {
             Console.WriteLine(msg);
-            Console.WriteLine(CurrentVariables.CurrentPosition());
+            Console.WriteLine(Commons.CurrentPosition());
         }
     }
 }

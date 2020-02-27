@@ -35,7 +35,7 @@ namespace Wims.Core.Commands
             var severity = ValidateEnums.ValidateSeverity(CommandParameters[3]);
 
 
-            var currBoardItems = CurrentVariables.currBoardValid().WorkItems;
+            var currBoardItems = Commons.CurrBoardValid().WorkItems;
 
             var findBug = this.WorkItemProvider.Find(title);
             if (findBug != null)
@@ -46,12 +46,12 @@ namespace Wims.Core.Commands
 
             var newBug = this.Factory.CreateBug(title, description, priority, severity);
 
-            CurrentVariables.AddToWIHistory(newBug);
-            CurrentVariables.AddToBoardHistory(CurrentVariables.currentBoard, newBug);
+            Commons.AddToWIHistory(newBug);
+            Commons.AddToBoardHistory(Commons.currentBoard, newBug);
             this.WorkItemProvider.Add(newBug);
             currBoardItems.Add(newBug);
 
-            return $"{newBug.Title} bug added to {CurrentVariables.currentBoard.Name} board!" + CurrentVariables.CreateBugText();
+            return $"{newBug.Title} bug added to {Commons.currentBoard.Name} board!" + Commons.CreateBugText();
 
         }
     }

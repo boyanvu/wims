@@ -19,7 +19,7 @@ namespace Wims.Core.Commands
 
         public override string Execute()
         {
-            return CurrentVariables.GetTeamHistory(CurrentVariables.currentTeam).TrimEnd();
+            return Commons.GetTeamHistory(Commons.currentTeam).TrimEnd();
         }
     }
 }

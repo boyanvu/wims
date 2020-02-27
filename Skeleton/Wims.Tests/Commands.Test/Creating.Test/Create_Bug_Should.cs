@@ -18,7 +18,7 @@ namespace Wims.Tests.Commands.Test.Creating.Test
             CommonInstances.CreateTestInstances();
             var fakeProvider = new FakeWorkItemProvider();
 
-            var fakeCurrBoard = CurrentVariables.currentBoard;
+            var fakeCurrBoard = Commons.currentBoard;
 
             var listParams = new List<string>() { "WorkItemTitle", "WorkItemDescription", "High", "Critical" };
 
@@ -39,7 +39,7 @@ namespace Wims.Tests.Commands.Test.Creating.Test
             CommonInstances.CreateTestInstances();
             var fakeProvider = new FakeWorkItemProvider();
 
-            var fakeCurrBoard = CurrentVariables.currentBoard;
+            var fakeCurrBoard = Commons.currentBoard;
 
             var listParams = new List<string>() { "WorkItemTitle", "WorkItemDescription", "High", "Critical" };
 
@@ -48,7 +48,7 @@ namespace Wims.Tests.Commands.Test.Creating.Test
             var result = sut.Execute();
 
             //Act & Assert
-            Assert.AreEqual(result, $"WorkItemTitle bug added to {fakeCurrBoard} board!" + CurrentVariables.CreateBugText());
+            Assert.AreEqual(result, $"WorkItemTitle bug added to {fakeCurrBoard} board!" + Commons.CreateBugText());
         }
 
         [TestMethod]

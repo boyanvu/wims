@@ -26,12 +26,12 @@ namespace Wims.Tests.Commands.Test.Assigning.Test
         public void Execute_Success()
         {
             //Arrange
-            CurrentVariables.currentTeam = new Team("TeamName");
-            CurrentVariables.currentBoard = new Board("BoardName");
-            CurrentVariables.currentTeam.Boards.Add(CurrentVariables.currentBoard);
+            Commons.currentTeam = new Team("TeamName");
+            Commons.currentBoard = new Board("BoardName");
+            Commons.currentTeam.Boards.Add(Commons.currentBoard);
             var fakeMember = new Member("TestMemberName");
-            var fakeCurrTeam = CurrentVariables.currentTeam;
-            var fakeCurrBoard = CurrentVariables.currentBoard;
+            var fakeCurrTeam = Commons.currentTeam;
+            var fakeCurrBoard = Commons.currentBoard;
             fakeCurrTeam.Members.Add(fakeMember);
             var listParams = new List<string>() { "TestMemberName", "WorkItemTitle" };
 
@@ -51,11 +51,11 @@ namespace Wims.Tests.Commands.Test.Assigning.Test
         public void Execute_NonExistingMember_ThrowEx()
         {
             //Arrange
-            CurrentVariables.currentTeam = new Team("TeamName");
-            CurrentVariables.currentBoard = new Board("BoardName");
-            CurrentVariables.currentTeam.Boards.Add(CurrentVariables.currentBoard);
-            var fakeCurrTeam = CurrentVariables.currentTeam;
-            var fakeCurrBoard = CurrentVariables.currentBoard;
+            Commons.currentTeam = new Team("TeamName");
+            Commons.currentBoard = new Board("BoardName");
+            Commons.currentTeam.Boards.Add(Commons.currentBoard);
+            var fakeCurrTeam = Commons.currentTeam;
+            var fakeCurrBoard = Commons.currentBoard;
 
             var listParams = new List<string>() { "TestMemberName", "WorkItemTitle" };
 
@@ -72,12 +72,12 @@ namespace Wims.Tests.Commands.Test.Assigning.Test
         public void Execute_NonExistingWorkItem_ThrowEx()
         {
             //Arrange
-            CurrentVariables.currentTeam = new Team("TeamName");
-            CurrentVariables.currentBoard = new Board("BoardName");
-            CurrentVariables.currentTeam.Boards.Add(CurrentVariables.currentBoard);
+            Commons.currentTeam = new Team("TeamName");
+            Commons.currentBoard = new Board("BoardName");
+            Commons.currentTeam.Boards.Add(Commons.currentBoard);
 
-            var fakeCurrTeam = CurrentVariables.currentTeam;
-            var fakeCurrBoard = CurrentVariables.currentBoard;
+            var fakeCurrTeam = Commons.currentTeam;
+            var fakeCurrBoard = Commons.currentBoard;
 
             var listParams = new List<string>() { "TestMemberName", "WorkItemTitle" };
 
@@ -91,12 +91,12 @@ namespace Wims.Tests.Commands.Test.Assigning.Test
         public void Execute_NonAssigneeType_ThrowEx()
         {
             //Arrange
-            CurrentVariables.currentTeam = new Team("TeamName");
-            CurrentVariables.currentBoard = new Board("BoardName");
-            CurrentVariables.currentTeam.Boards.Add(CurrentVariables.currentBoard);
+            Commons.currentTeam = new Team("TeamName");
+            Commons.currentBoard = new Board("BoardName");
+            Commons.currentTeam.Boards.Add(Commons.currentBoard);
             var fakeMember = new Member("TestMemberName");
-            var fakeCurrTeam = CurrentVariables.currentTeam;
-            var fakeCurrBoard = CurrentVariables.currentBoard;
+            var fakeCurrTeam = Commons.currentTeam;
+            var fakeCurrBoard = Commons.currentBoard;
             fakeCurrTeam.Members.Add(fakeMember);
             var listParams = new List<string>() { "TestMemberName", "WorkItemTitle" };
 

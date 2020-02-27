@@ -30,7 +30,7 @@ namespace Wims.Core.Commands
             var size = ValidateEnums.ValidateStorySize(CommandParameters[3]);
 
 
-            var currBoardItems = CurrentVariables.currBoardValid().WorkItems;
+            var currBoardItems = Commons.CurrBoardValid().WorkItems;
 
             var findStory = this.WorkItemProvider.Find(title);
             if (findStory != null)
@@ -42,12 +42,12 @@ namespace Wims.Core.Commands
             var newStory = this.Factory.CreateStory(title, description, priority, size);
 
 
-            CurrentVariables.AddToWIHistory(newStory);
-            CurrentVariables.AddToBoardHistory(CurrentVariables.currentBoard, newStory);
+            Commons.AddToWIHistory(newStory);
+            Commons.AddToBoardHistory(Commons.currentBoard, newStory);
             this.WorkItemProvider.Add(newStory);
             currBoardItems.Add(newStory);
 
-            return $"{newStory.Title} story added to {CurrentVariables.currentBoard.Name} board!" + CurrentVariables.CreateStoryText();
+            return $"{newStory.Title} story added to {Commons.currentBoard.Name} board!" + Commons.CreateStoryText();
 
         }
 

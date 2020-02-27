@@ -22,7 +22,7 @@ namespace Wims.Core.Commands.Creating
                 throw new ArgumentException("Parameters count is not valid!");
             }
 
-            var currentTeam = CurrentVariables.currentTeam;
+            var currentTeam = Commons.currentTeam;
             if (currentTeam == null)
             {
                 throw new Exception($"You have to select/create team before member creation." + Environment.NewLine +

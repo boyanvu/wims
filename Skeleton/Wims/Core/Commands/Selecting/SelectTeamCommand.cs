@@ -39,11 +39,11 @@ namespace Wims.Core.Commands
 
             var findTeam = this.TeamProvider.Find(teamToSelect);
 
-            CurrentVariables.currentTeam = findTeam ?? throw new Exception 
+            Commons.currentTeam = findTeam ?? throw new Exception 
                 ($"{teamToSelect} does not exists.{Environment.NewLine} " +
                 $"You can create it with command: createteam {teamToSelect}.");
 
-            CurrentVariables.currentBoard = null;
+            Commons.currentBoard = null;
 
             return $"Team {teamToSelect} selected";          
         }

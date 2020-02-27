@@ -16,8 +16,8 @@ namespace Wims.Tests.Commands.Test.Modifying.Test
         {
             //Arrange
             var bugToModify = new Bug("testBugTitle", "testBugDescription", Priority.High, Severity.Critical);
-            CurrentVariables.currentBoard = new Board("BoardName");
-            CurrentVariables.currentBoard.WorkItems.Add(bugToModify);
+            Commons.currentBoard = new Board("BoardName");
+            Commons.currentBoard.WorkItems.Add(bugToModify);
             var wiPrivider = new FakeWorkItemProvider();
             var commandParams = new List<string>() { "testBugTitle", "priority", "Low" };
             var sut = new ModifyBugCommand(commandParams, wiPrivider);
@@ -34,8 +34,8 @@ namespace Wims.Tests.Commands.Test.Modifying.Test
         {
             //Arrange
             var bugToModify = new Bug("testBugTitle", "testBugDescription", Priority.High, Severity.Critical);
-            CurrentVariables.currentBoard = new Board("BoardName");
-            CurrentVariables.currentBoard.WorkItems.Add(bugToModify);
+            Commons.currentBoard = new Board("BoardName");
+            Commons.currentBoard.WorkItems.Add(bugToModify);
             var wiPrivider = new FakeWorkItemProvider();
             var commandParams = new List<string>() { "testBugTitle", "FakeParameter", "Low" };
             var sut = new ModifyBugCommand(commandParams, wiPrivider);

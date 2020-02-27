@@ -28,7 +28,7 @@ namespace Wims.Tests.Commands.Test.Modifying.Test
         {
             var fakeProvider = new FakeWorkItemProvider();
             var board = new Board("Trello");
-            CurrentVariables.currentBoard = board;
+            Commons.currentBoard = board;
             var listParams = new List<string>() { "CreatedNewStory", "CSDescription" };
 
             var sut = new ModifyStoryCommand(listParams, fakeProvider);
@@ -44,8 +44,8 @@ namespace Wims.Tests.Commands.Test.Modifying.Test
             var board = new Board("Trello");
             var story = new Story("CreatedNewStory", "CSDescription", Priority.High, Size.Large);
             var listParams = new List<string>() { "CreatedNewStory", "size", "medium" };
-            CurrentVariables.currentBoard = board;
-            var currBoardItems = CurrentVariables.currentBoard.WorkItems;
+            Commons.currentBoard = board;
+            var currBoardItems = Commons.currentBoard.WorkItems;
             currBoardItems.Add(story);
             var sut = new ModifyStoryCommand(listParams, fakeProvider);
 
@@ -64,8 +64,8 @@ namespace Wims.Tests.Commands.Test.Modifying.Test
             var board = new Board("Trello");
             var story = new Story("CreatedNewStory", "CSDescription", Priority.High, Size.Large);
             var listParams = new List<string>() { "CreatedNewStory", "BlaBla", "medium" };
-            CurrentVariables.currentBoard = board;
-            var currBoardItems = CurrentVariables.currentBoard.WorkItems;
+            Commons.currentBoard = board;
+            var currBoardItems = Commons.currentBoard.WorkItems;
             currBoardItems.Add(story);
             var sut = new ModifyStoryCommand(listParams, fakeProvider);
 

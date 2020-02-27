@@ -14,9 +14,9 @@ namespace Wims.Tests.Commands.Test
         public const string fakeWiTitle = "WorkItemTitle";
         public static void CreateTestInstances()
         {
-            CurrentVariables.currentTeam = new Team("TeamName");
-            CurrentVariables.currentBoard = new Board("BoardName");
-            CurrentVariables.currentTeam.Boards.Add(CurrentVariables.currentBoard);
+            Commons.currentTeam = new Team("TeamName");
+            Commons.currentBoard = new Board("BoardName");
+            Commons.currentTeam.Boards.Add(Commons.currentBoard);
         }
     }
 

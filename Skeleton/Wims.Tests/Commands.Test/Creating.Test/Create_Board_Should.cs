@@ -14,7 +14,7 @@ namespace Wims.Tests.Commands.Test.Creating.Test
         public void CreateBoardSuccess()
         {
             //Arrange
-            CurrentVariables.currentTeam = new Team("FakeTeamName");
+            Commons.currentTeam = new Team("FakeTeamName");
             var list = new List<string>() { "BoardName" };
             var fakeBoardProvider = new FakeBoardProvider();
 
@@ -41,7 +41,7 @@ namespace Wims.Tests.Commands.Test.Creating.Test
         public void BoardCreation_Execute_BoardWithSameNameAlreadyExists_ThrowEx()
         {
             //Arrange
-            CurrentVariables.currentTeam = new Team("FakeTeamName");
+            Commons.currentTeam = new Team("FakeTeamName");
             var list = new List<string>() { "BoardName" };
             var fakeBoardProvider = new FakeBoardProvider();
             fakeBoardProvider.Add(new Board("BoardName"));

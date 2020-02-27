@@ -30,7 +30,7 @@ namespace Wims.Core.Commands
             var workItemTitle = this.CommandParameters[0];
             var memberName = this.CommandParameters[1];
             var message = this.CommandParameters[2];
-            var currBoardItems = CurrentVariables.currentBoard.WorkItems;
+            var currBoardItems = Commons.currentBoard.WorkItems;
 
 
             if (currBoardItems.Count == 0)
@@ -38,11 +38,11 @@ namespace Wims.Core.Commands
                 throw new ArgumentException("No items in this board!");
             }
 
-            var findMember = CurrentVariables.currentTeam.Members.FirstOrDefault(m => m.Name == memberName) ??
-                throw new ArgumentException($"Member with name {memberName} does not exist in team {CurrentVariables.currentTeam.Name}.");
+            var findMember = Commons.currentTeam.Members.FirstOrDefault(m => m.Name == memberName) ??
+                throw new ArgumentException($"Member with name {memberName} does not exist in team {Commons.currentTeam.Name}.");
 
             var findItem = currBoardItems.FirstOrDefault(i => i.Title == workItemTitle) ??
-                throw new ArgumentException($"Work item with title {workItemTitle} does not exist in board {CurrentVariables.currentBoard.Name}.");
+                throw new ArgumentException($"Work item with title {workItemTitle} does not exist in board {Commons.currentBoard.Name}.");
 
             var newComment = this.Factory.CreateComment(findMember.Name, message);
 

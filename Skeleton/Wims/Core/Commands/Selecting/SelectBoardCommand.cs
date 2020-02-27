@@ -16,7 +16,7 @@ namespace Wims.Core.Commands
 
         public override string Execute()
         {
-            var currTeam = CurrentVariables.currentTeam;
+            var currTeam = Commons.currentTeam;
             if (currTeam == null)
             {
                 var msg = $"You have to select/create team before board selection." + Environment.NewLine +
@@ -40,7 +40,7 @@ namespace Wims.Core.Commands
      
             var findBoard = currTeam.Boards.FirstOrDefault(b => b.Name == boardToSelect);
 
-            CurrentVariables.currentBoard = findBoard ?? throw new Exception($"{boardToSelect} does not exist in team" +
+            Commons.currentBoard = findBoard ?? throw new Exception($"{boardToSelect} does not exist in team" +
                     $" {currTeam.Name}.{Environment.NewLine} You can create it with command: createboard {boardToSelect}.");
 
             return $"Board {boardToSelect} selected";

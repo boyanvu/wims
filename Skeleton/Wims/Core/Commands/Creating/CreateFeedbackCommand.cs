@@ -27,7 +27,7 @@ namespace Wims.Core.Commands
             var description = this.CommandParameters[1];
             var rating = int.Parse(CommandParameters[2]);
 
-            var currBoardItems = CurrentVariables.currBoardValid().WorkItems;
+            var currBoardItems = Commons.CurrBoardValid().WorkItems;
 
             var findFeedback = this.WorkItemProvider.Find(title);
             if (findFeedback != null)
@@ -38,12 +38,12 @@ namespace Wims.Core.Commands
 
             var newFeedback = this.Factory.CreateFeedback(title, description, rating);
 
-            CurrentVariables.AddToWIHistory(newFeedback);
-            CurrentVariables.AddToBoardHistory(CurrentVariables.currentBoard, newFeedback);
+            Commons.AddToWIHistory(newFeedback);
+            Commons.AddToBoardHistory(Commons.currentBoard, newFeedback);
             this.WorkItemProvider.Add(newFeedback);
             currBoardItems.Add(newFeedback);
 
-            return $"{newFeedback.Title} feedback added to {CurrentVariables.currentBoard.Name} board!" + CurrentVariables.CreateFeedbackText();
+            return $"{newFeedback.Title} feedback added to {Commons.currentBoard.Name} board!" + Commons.CreateFeedbackText();
 
         }
 

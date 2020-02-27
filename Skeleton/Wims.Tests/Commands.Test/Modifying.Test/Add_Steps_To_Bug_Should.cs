@@ -39,8 +39,8 @@ namespace Wims.Tests.Commands.Test.Modifying.Test
             var board = new Board("Trello");
             var bug = new Bug("NewCreatedBug", "NewCreateBugDescription", Priority.High, Severity.Minor);
             var listParams = new List<string>() { "NewCreatedBug", "first step>", "second step>", "third step" };
-            CurrentVariables.currentBoard = board;
-            var currBoardItems = CurrentVariables.currentBoard.WorkItems;
+            Commons.currentBoard = board;
+            var currBoardItems = Commons.currentBoard.WorkItems;
             currBoardItems.Add(bug);
             var sut = new AddStepsToBugCommand(listParams);
 

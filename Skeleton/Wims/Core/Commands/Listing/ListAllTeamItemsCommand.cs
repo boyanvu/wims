@@ -21,7 +21,7 @@ namespace Wims.Core.Commands
         {
 
             var builder = new StringBuilder();
-            var currBoardItems = CurrentVariables.currentBoard.WorkItems;
+            var currBoardItems = Commons.currentBoard.WorkItems;
 
 
             if (currBoardItems.Count == 0)

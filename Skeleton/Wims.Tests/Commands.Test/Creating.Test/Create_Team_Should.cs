@@ -46,7 +46,7 @@ namespace Wims.Tests.Commands.Test.Creating.Test
             var result = sut.Execute();
 
             //Assert
-            Assert.AreEqual(result, $"Created Team{Environment.NewLine}Ducks" + CurrentVariables.CreateTeamText());
+            Assert.AreEqual(result, $"Created Team{Environment.NewLine}Ducks" + Commons.CreateTeamText());
         }
 
 

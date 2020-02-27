@@ -28,14 +28,14 @@ namespace Wims.Core.Commands
             var assigneeName = this.CommandParameters[0];
             var workItemTitle = this.CommandParameters[1];
 
-            var currTeamMembers = CurrentVariables.currentTeam.Members;
-            var currBoardItems = CurrentVariables.currentBoard.WorkItems;
+            var currTeamMembers = Commons.currentTeam.Members;
+            var currBoardItems = Commons.currentBoard.WorkItems;
 
             var assignee = currTeamMembers.FirstOrDefault(m => m.Name == assigneeName) ??
-                throw new ArgumentException($"Member with name {assigneeName} does not exist in team {CurrentVariables.currentTeam.Name}.");
+                throw new ArgumentException($"Member with name {assigneeName} does not exist in team {Commons.currentTeam.Name}.");
 
             var workItem = currBoardItems.FirstOrDefault(wi => wi.Title == workItemTitle) ??
-                throw new ArgumentException($"Work item with title {workItemTitle} does not exist in board {CurrentVariables.currentBoard.Name}.");
+                throw new ArgumentException($"Work item with title {workItemTitle} does not exist in board {Commons.currentBoard.Name}.");
 
             var wi = workItem as ICommon;
 
@@ -46,7 +46,7 @@ namespace Wims.Core.Commands
 
             assignee.History.Add($"{workItem.Title} {workItem.GetType().Name.ToLower()} has been assigned to {assigneeName}");
             workItem.History.Add($"{workItem.Title} {workItem.GetType().Name.ToLower()} has been assigned to {assigneeName}");
-            CurrentVariables.currentBoard.History.Add($"{workItem.Title} {workItem.GetType().Name.ToLower()} has been assigned to {assigneeName}");
+            Commons.currentBoard.History.Add($"{workItem.Title} {workItem.GetType().Name.ToLower()} has been assigned to {assigneeName}");
 
             return $"{assigneeName} has been assigned to {workItemTitle}";
         }

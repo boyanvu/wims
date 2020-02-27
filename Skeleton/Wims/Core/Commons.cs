@@ -5,10 +5,13 @@ using Wims.Models.Contracts;
 
 namespace Wims.Core
 {
-    public static class CurrentVariables
+    public static class Commons
     {
         public static ITeam currentTeam;
         public static IBoard currentBoard;
+
+
+        //Returns the current team and board where the program works in
         public static string CurrentPosition()
         {
             var currTeam = currentTeam != null ? currentTeam.Name : "NotSelected";
@@ -18,12 +21,13 @@ namespace Wims.Core
         }
 
 
+        //Adds to the work item history
         public static void AddToWIHistory(IWorkItem item)
         {
-            item.History.Add($"{item.Title} {item.GetType().Name.ToLower()} created in {CurrentVariables.currentBoard.Name}");
+            item.History.Add($"{item.Title} {item.GetType().Name.ToLower()} created in {Commons.currentBoard.Name}");
         }
 
-
+        //Adds all item histories in their board history
         public static void AddToBoardHistory(IBoard board, IWorkItem item)
         {
             foreach (var itemHistory in item.History)
@@ -32,6 +36,7 @@ namespace Wims.Core
             }
         }
 
+        //Adds all boards and members history to their team history
         public static string GetTeamHistory(ITeam team)
         {
             var builder = new StringBuilder();
@@ -46,23 +51,27 @@ namespace Wims.Core
             return builder.ToString().TrimEnd();
         }
 
+
+        //Returns the current work item by his title and type
         public static IWorkItem GetWorkItem(string workItemTitle, string workItemType)
         {
 
-            var currBoardItems = CurrentVariables.currentBoard.WorkItems;
+            var currBoardItems = Commons.currentBoard.WorkItems;
             var teamWorkItemsOfType = currBoardItems.Where(b => b.GetType().Name == workItemType);
 
             var workItem = teamWorkItemsOfType.FirstOrDefault(b => b.Title == workItemTitle);
             if (workItem == null)
             {
                 throw new ArgumentException
-                    ($"There's no work item {workItemTitle} of type {workItemType} in board {CurrentVariables.currentBoard.Name}.");
+                    ($"There's no work item {workItemTitle} of type {workItemType} in board {Commons.currentBoard.Name}.");
             }
 
             return workItem;
         }
 
-        public static ITeam currTeamValid()
+
+        //Returns the current team 
+        public static ITeam CurrTeamValid()
         {
             if (currentTeam == null)
             {
@@ -74,7 +83,8 @@ namespace Wims.Core
             return currentTeam;
         }
 
-        public static IBoard currBoardValid()
+        //Returns the current board
+        public static IBoard CurrBoardValid()
         {
             if (currentBoard == null)
             {
@@ -86,6 +96,7 @@ namespace Wims.Core
             return currentBoard;
         }
 
+        //Returns a message after executing the createbugcommand
         public static string CreateBugText()
         {
             var msg = Environment.NewLine + "You can now add comment or steps to reproduce using the following commands:" + Environment.NewLine +
@@ -94,7 +105,7 @@ namespace Wims.Core
             return msg;
         }
 
-
+        //Returns a message after executing the createstorycommand
         public static string CreateStoryText()
         {
             var msg = Environment.NewLine + "You can modify the story using the following commands:" + Environment.NewLine +
@@ -102,6 +113,7 @@ namespace Wims.Core
             return msg;
         }
 
+        //Returns a message after executing the createfeedbackcommand
         public static string CreateFeedbackText()
         {
             var msg = Environment.NewLine + "You can modify the feedback using the following commands:" + Environment.NewLine +
@@ -109,6 +121,7 @@ namespace Wims.Core
             return msg;
         }
 
+        //Returns a message after executing the createteamcommand
         public static string CreateTeamText()
         {
             var msg = Environment.NewLine + "You can now create a member or a board in the team using the following commands:" + Environment.NewLine +
@@ -116,6 +129,7 @@ namespace Wims.Core
             return msg;
         }
 
+        //Returns a message after executing the createboardcommand
         public static string CreateBoardText()
         {
             var msg = Environment.NewLine + "You can now create a workitem in the board using the following commands:" + Environment.NewLine +

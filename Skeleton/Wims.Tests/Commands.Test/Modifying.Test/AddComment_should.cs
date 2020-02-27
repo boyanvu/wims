@@ -17,8 +17,8 @@ namespace Wims.Tests.Commands.Test.Modifying.Test
             //Arrange
             CommonInstances.CreateTestInstances();
             var fakeMember = new Member("TestMemberName");
-            var fakeCurrTeam = CurrentVariables.currentTeam;
-            var fakeCurrBoard = CurrentVariables.currentBoard;
+            var fakeCurrTeam = Commons.currentTeam;
+            var fakeCurrBoard = Commons.currentBoard;
             fakeCurrTeam.Members.Add(fakeMember);
             var listParams = new List<string>() { "WorkItemTitle", "TestMemberName", "BlaBlaBla" };
             var workItem = new Bug("WorkItemTitle", "WorkItemDescription", Priority.High, Severity.Critical);
@@ -40,7 +40,7 @@ namespace Wims.Tests.Commands.Test.Modifying.Test
         {
             //Arrange
             CommonInstances.CreateTestInstances();
-            var fakeCurrBoard = CurrentVariables.currentBoard;
+            var fakeCurrBoard = Commons.currentBoard;
             var listParams = new List<string>() { "WorkItemTitle", "TestMemberName", "BlaBlaBla" };
             var workItem = new Bug("WorkItemTitle", "WorkItemDescription", Priority.High, Severity.Critical);
             var fakeMemberProvider = new FakeMemberProvider();
@@ -57,8 +57,8 @@ namespace Wims.Tests.Commands.Test.Modifying.Test
             //Arrange
             CommonInstances.CreateTestInstances();
             var fakeMember = new Member("TestMemberName");
-            var fakeCurrTeam = CurrentVariables.currentTeam;
-            var fakeCurrBoard = CurrentVariables.currentBoard;
+            var fakeCurrTeam = Commons.currentTeam;
+            var fakeCurrBoard = Commons.currentBoard;
             var listParams = new List<string>() { "WorkItemTitle", "TestMemberName", "BlaBlaBla" };
             var workItem = new Bug("WorkItemTitle", "WorkItemDescription", Priority.High, Severity.Critical);
             fakeCurrBoard.WorkItems.Add(workItem);
@@ -76,8 +76,8 @@ namespace Wims.Tests.Commands.Test.Modifying.Test
             //Arrange
             CommonInstances.CreateTestInstances();
             var fakeMember = new Member("TestMemberName");
-            var fakeCurrTeam = CurrentVariables.currentTeam;
-            var fakeCurrBoard = CurrentVariables.currentBoard;
+            var fakeCurrTeam = Commons.currentTeam;
+            var fakeCurrBoard = Commons.currentBoard;
             var listParams = new List<string>() { "WorkItemTitle", "TestMemberName", "BlaBlaBla" };
             var fakeMemberProvider = new FakeMemberProvider();
 
