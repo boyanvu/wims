@@ -84,4 +84,22 @@ namespace Wims.Tests.Commands.Test
             return board;
         }
     }
+
+    public class FakeTeamProvider : ITeamProvider
+    {
+        private List<ITeam> teams => new List<ITeam>();
+
+        public IReadOnlyList<ITeam> Teams => teams;
+
+        public void Add(ITeam team)
+        {
+            teams.Add(team);
+        }
+
+        public ITeam Find(string name)
+        {
+            var team = teams.FirstOrDefault(t => t.Name == name);
+            return team;
+        }
+    }
 }

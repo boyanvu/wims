@@ -6,6 +6,7 @@ using Wims.Core.Contracts;
 using Wims.Models;
 using Wims.Models.Contracts;
 using Wims.Models.Common;
+using Wims.Tests.Commands.Test;
 
 namespace Wims.Tests.Commands.Tests.Sorting.Tests.SortBugsBySeverityCommandTests
 {
@@ -45,19 +46,5 @@ namespace Wims.Tests.Commands.Tests.Sorting.Tests.SortBugsBySeverityCommandTests
             Assert.IsTrue(result.StartsWith($"Bug:{Environment.NewLine}  Title: WindowsCrash"));
         }
     }
-    class FakeWorkItemProvider : IWorkItemProvider
-    {
-        private readonly List<IWorkItem> workItems = new List<IWorkItem>();
-        public IReadOnlyList<IWorkItem> WorkItems => workItems;
 
-        public void Add(IWorkItem item)
-        {
-            workItems.Add(item);
-        }
-
-        public IWorkItem Find(string title)
-        {
-            throw new NotImplementedException();
-        }
-    }
 }

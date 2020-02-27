@@ -45,20 +45,6 @@ namespace Wims.Tests.Commands.Test.Listing.Test
         }
 
 
-        class FakeMemberProvider : IMemberProvider
-        {
-            private readonly List<IMember> members = new List<IMember>();
-            public IReadOnlyList<IMember> Members => members;
-
-            public void Add(IMember member)
-            {
-                members.Add(member);
-            }
-
-            public IMember Find(string name)
-            {
-                throw new NotImplementedException();
-            }
-        }
+      
     }
 }

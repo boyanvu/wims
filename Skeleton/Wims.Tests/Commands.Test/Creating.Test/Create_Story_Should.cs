@@ -55,21 +55,6 @@ namespace Wims.Tests.Commands.Test.Creating.Test
         }
 
 
-        class FakeWorkItemProvider : IWorkItemProvider
-        {
-            private readonly List<IWorkItem> workItems = new List<IWorkItem>();
-            public IReadOnlyList<IWorkItem> WorkItems => workItems;
-
-            public void Add(IWorkItem item)
-            {
-                workItems.Add(item);
-            }
-
-            public IWorkItem Find(string title)
-            {
-                var wi = workItems.FirstOrDefault(m => m.Title == title);
-                return wi;
-            }
-        }
+    
     }
 }

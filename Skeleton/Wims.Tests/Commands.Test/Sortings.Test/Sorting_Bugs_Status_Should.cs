@@ -68,20 +68,6 @@ namespace Wims.Tests.Commands.Test.Sortings.Test
 
 
 
-        class FakeWorkItemProvider : IWorkItemProvider
-        {
-            private readonly List<IWorkItem> workItems = new List<IWorkItem>();
-            public IReadOnlyList<IWorkItem> WorkItems => workItems;
-
-            public void Add(IWorkItem item)
-            {
-                workItems.Add(item);
-            }
-
-            public IWorkItem Find(string title)
-            {
-                throw new NotImplementedException();
-            }
-        }
+     
     }
 }
