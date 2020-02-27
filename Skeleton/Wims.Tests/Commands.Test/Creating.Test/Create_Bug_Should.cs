@@ -9,7 +9,7 @@ using Wims.Models.Common;
 namespace Wims.Tests.Commands.Test.Creating.Test
 {
     [TestClass]
-    public class CreatingBug_Should
+    public class Create_Bug_Should
     {
         [TestMethod]
         public void BugCreation_Execute_SameTitleAlreadyExists_ThrowEx()
@@ -17,13 +17,12 @@ namespace Wims.Tests.Commands.Test.Creating.Test
             //Arrange
             CommonInstances.CreateTestInstances();
             var fakeProvider = new FakeWorkItemProvider();
-            var fakeWiTitle = "WorkItemTitle";
 
             var fakeCurrBoard = CurrentVariables.currentBoard;
 
-            var listParams = new List<string>() { fakeWiTitle, "WorkItemDescription", "High", "Critical" };
+            var listParams = new List<string>() { "WorkItemTitle", "WorkItemDescription", "High", "Critical" };
 
-            var workItem = new Bug(fakeWiTitle, "WorkItemDescription", Priority.High, Severity.Critical);
+            var workItem = new Bug("WorkItemTitle", "WorkItemDescription", Priority.High, Severity.Critical);
 
             fakeProvider.Add(workItem);
 
@@ -39,19 +38,17 @@ namespace Wims.Tests.Commands.Test.Creating.Test
             //Arrange
             CommonInstances.CreateTestInstances();
             var fakeProvider = new FakeWorkItemProvider();
-            var fakeWiTitle = "WorkItemTitle";
 
-            var fakeCurrTeam = CurrentVariables.currentTeam;
             var fakeCurrBoard = CurrentVariables.currentBoard;
 
-            var listParams = new List<string>() { fakeWiTitle, "WorkItemDescription", "High", "Critical" };
+            var listParams = new List<string>() { "WorkItemTitle", "WorkItemDescription", "High", "Critical" };
 
             var sut = new CreateBugCommand(listParams, fakeProvider);
 
             var result = sut.Execute();
 
             //Act & Assert
-            Assert.AreEqual(result, $"{fakeWiTitle} bug added to {fakeCurrBoard} board!" + CurrentVariables.CreateBugText());
+            Assert.AreEqual(result, $"WorkItemTitle bug added to {fakeCurrBoard} board!" + CurrentVariables.CreateBugText());
         }
 
         [TestMethod]
