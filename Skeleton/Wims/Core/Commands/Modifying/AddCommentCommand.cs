@@ -37,7 +37,8 @@ namespace Wims.Core.Commands
             {
                 throw new ArgumentException("No items in this board!");
             }
-            var findMember = this.MemberProvider.Find(memberName) ??
+
+            var findMember = CurrentVariables.currentTeam.Members.FirstOrDefault(m => m.Name == memberName) ??
                 throw new ArgumentException($"Member with name {memberName} does not exist in team {CurrentVariables.currentTeam.Name}.");
 
             var findItem = currBoardItems.FirstOrDefault(i => i.Title == workItemTitle) ??
