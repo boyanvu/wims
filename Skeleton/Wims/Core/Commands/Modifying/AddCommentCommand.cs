@@ -49,7 +49,7 @@ namespace Wims.Core.Commands
             findItem.AddComment(newComment);
 
 
-            return newComment.ToString().TrimEnd(); ;
+            return newComment.ToString().TrimEnd(); 
         }
     }
 }

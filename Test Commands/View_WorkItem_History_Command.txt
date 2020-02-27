@@ -1,0 +1,8 @@
+createteam Mandalorians
+createboard Trello
+createmember Boyan
+addmembertoteam Boyan
+createbug NewCrashBug CrashBugDescription high minor
+assign Boyan NewCrashBug
+modifybug NewCrashBug priority medium
+viewworkitemhistory NewCrashBug
