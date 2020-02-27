@@ -33,7 +33,6 @@ namespace Wims.Models
         public override string ToString()
         {
             return $"{this.GetType().Name}:{Environment.NewLine}  " +
-                $"ID: {this.Id}{Environment.NewLine}  " +
                 $"Title: {this.Title}{Environment.NewLine}  " +
                 $"Description: {this.Description}{Environment.NewLine}  " +
                 $"Rating: {this.Rating}{Environment.NewLine}  " +

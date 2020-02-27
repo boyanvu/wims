@@ -40,7 +40,7 @@ namespace Wims.Tests.Commands.Tests.Sorting.Tests.SortingsRatingsCommand
             var result = sut.Execute();
 
             //Assert
-            Assert.IsTrue(result.StartsWith($"Feedback:{Environment.NewLine}  ID: 1"));
+            Assert.IsTrue(result.StartsWith($"Feedback:{Environment.NewLine}  Title: NewFeedback1"));
         }
     }
 

@@ -28,7 +28,6 @@ namespace Wims.Models.Common
             var assigneeName = this.Assignee == null ? "-" : this.Assignee.Name;
 
             return $"{this.GetType().Name}:{Environment.NewLine}  " +
-                $"ID: {this.Id}{Environment.NewLine}  " +
                 $"Title: {this.Title}{Environment.NewLine}  " +
                 $"Description: {this.Description}{Environment.NewLine}  " +
                 $"Priority: {this.Priority}{Environment.NewLine}  " +
