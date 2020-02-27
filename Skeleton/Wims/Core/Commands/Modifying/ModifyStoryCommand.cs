@@ -48,7 +48,7 @@ namespace Wims.Core.Commands
             }
 
 
-            storyToModify.History.Add($"{storyToModify.Title}'s {this.CommandParameters[0]} was modified to {this.CommandParameters[1]}");
+            storyToModify.History.Add($"{storyToModify.Title}'s {this.CommandParameters[1]} was modified to {this.CommandParameters[2]}");
             return $"{storyToModify.Title} story's {this.CommandParameters[1]} was modified to {this.CommandParameters[2]} in {CurrentVariables.currentBoard.Name} board!";
         }
     }

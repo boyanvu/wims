@@ -6,6 +6,7 @@ using Wims.Core.Commands;
 using Wims.Core.Providers.Wims.Core.Providers;
 using Wims.Core.Commands.Modifying;
 using Wims.Core.Commands.Sorting;
+using Wims.Core.Commands.Creating;
 
 namespace Wims.Core.Providers
 {
@@ -65,6 +66,7 @@ namespace Wims.Core.Providers
                 "sortitemsbypriority" => new SortAllItemsByPriority(parameters, workItemProvider),
                 "sortitemsbyseverity" => new SortBugsBySeverityCommand(parameters, workItemProvider),
                 "sortitemsbysize" => new SortStoriesBySizeCommand(parameters, workItemProvider),
+                "addmembertoteam" => new AddMemberToTeamCommand(parameters, memberProvider),
 
                 _ => throw new InvalidOperationException("Command does not exist")
             };

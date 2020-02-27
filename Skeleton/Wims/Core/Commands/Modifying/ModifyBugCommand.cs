@@ -50,7 +50,7 @@ namespace Wims.Core.Commands
             }
 
 
-            bugToModify.History.Add($"{bugToModify.Title}'s {this.CommandParameters[0]} was modified to {this.CommandParameters[1]}");
+            bugToModify.History.Add($"{bugToModify.Title}'s {this.CommandParameters[1]} was modified to {this.CommandParameters[2]}");
             return $"{bugToModify.Title} bug's {this.CommandParameters[1]} was modified to {this.CommandParameters[2]} in {CurrentVariables.currentBoard.Name} board!";
         }
     }
