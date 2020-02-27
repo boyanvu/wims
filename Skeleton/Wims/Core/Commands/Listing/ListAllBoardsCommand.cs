@@ -23,7 +23,7 @@ namespace Wims.Core.Commands
 
             if (boards.Count == 0)
             {
-                throw new ArgumentException("No boards added!" + Environment.NewLine +
+                throw new ArgumentException("There's no boards available!" + Environment.NewLine +
                           $"To add a new board, first create a team! Use the following commands:" + Environment.NewLine +
                           $"createteam <teamname> -> createboard <membername>");
             }
