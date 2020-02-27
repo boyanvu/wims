@@ -1,0 +1,8 @@
+createteam Mandalorians
+createmember Radoslav
+addmembertoteam Radoslav
+createboard Trello
+createstory CSharpStory CSharpStoryDescription high small
+createstory TelerikStory TelerikStoryDescription medium large
+assign Radoslav CSharpStory
+filterallstoriesbyassignee Radoslav

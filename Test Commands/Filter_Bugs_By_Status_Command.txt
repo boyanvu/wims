@@ -1,0 +1,6 @@
+createteam Mandalorians
+createboard Trello
+createbug NewCrashBug CrashBugDescription high minor
+createbug NewFreezeBug FreezeBugDescription medium major
+modifybug NewCrashBug status fixed
+filterallbugsbystatus fixed
