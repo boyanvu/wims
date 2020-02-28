@@ -18,7 +18,7 @@ Modify
 	modifybug....................(<bugTitle> <Priority/Severity/Status> <newValue>)
 	modifystory..................(<storyTitle> <Priority/Size/Status> <newValue>)
 	modifyfeedback...............(<feedbackTitle> <Rating/Status> <newValue>)
-	addstepstobug................(<workItemTitle> <StepsToReproduce(each step separated by % )>)
+	addstepstobug................(<workItemTitle> <StepsToReproduce(each step is separated by '>' )>)
 	addcomment...................(<workItemTitle> <memberName> <Comment>)
 
 Listing
