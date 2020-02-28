@@ -21,6 +21,7 @@ Every
         
 Commands: 
     Create - team, member, board, work item, comment
+    Add - comment to a work item, member to a team
     Modify - work item(bug, story, feedback)
     List - all items, filtered, sorted
     Select - team and board(change the current team or board)
